@@ -2,6 +2,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const { Parser } = require('json2csv');
 
 const app = express();
 const PORT = 3000;
@@ -13,11 +14,15 @@ const dataPath = path.join(__dirname, 'data.json');
 
 // Rota para obter os dados do estoque
 app.get('/api/stock', (req, res) => {
+  console.log('Recebida requisição para /api/stock');
+  console.log('Caminho do arquivo de dados:', dataPath);
   fs.readFile(dataPath, 'utf8', (err, data) => {
     if (err) {
+      console.error('ERRO AO LER data.json:', err);
       res.status(500).send('Erro ao ler os dados do estoque.');
       return;
     }
+    console.log('Sucesso ao ler data.json, enviando dados.');
     res.send(JSON.parse(data));
   });
 });
