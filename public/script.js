@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const dashboardContainer = document.getElementById('dashboard-container');
+  const downloadButton = document.getElementById('download-button');
   const refreshButton = document.getElementById('refresh-button');
   let stockData = [];
 
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderDashboard();
     } catch (error) {
       console.error('Erro ao buscar dados do estoque:', error);
+      dashboardContainer.innerHTML = '<p style="color: red;">Erro ao carregar o estoque. Verifique o console para mais detalhes.</p>';
     }
   };
 
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <tr>
             <th>Produto</th>
             <th>Quantidade</th>
+            <th>Status</th>
             <th>Responsável</th>
             <th>Ações</th>
           </tr>
@@ -45,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <tr data-id="${item.id}">
               <td>${item.produto}</td>
               <td data-field="quantidade">${item.quantidade}</td>
+              <td>
+                <button class="status-button ${item.quantidade < 50 ? 'status-red' : item.quantidade < 70 ? 'status-yellow' : 'status-green'}">
+                  ${item.quantidade < 50 ? 'Baixo' : item.quantidade < 70 ? 'Revisar' : 'OK'}
+                </button>
+              </td>
               <td data-field="responsavel">${item.responsavel}</td>
               <td>
                 <button class="edit-button">Editar</button>
@@ -101,7 +109,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  refreshButton.addEventListener('click', fetchStock);
+  if (refreshButton) {
+    refreshButton.addEventListener('click', fetchStock);
+  }
+
+  if (downloadButton) {
+    downloadButton.addEventListener('click', () => {
+      if (stockData.length === 0) {
+        alert('Não há dados para baixar.');
+        return;
+      }
+
+      const headers = ['ID', 'Produto', 'Quantidade', 'Responsável', 'Local'];
+      
+      const escapeCell = (cell) => {
+        const cellStr = String(cell == null ? '' : cell).replace(/"/g, '""');
+        return `"${cellStr}"`;
+      };
+
+      const csvRows = stockData.map(item => {
+        return [
+          item.id,
+          item.produto,
+          item.quantidade,
+          item.responsavel,
+          item.local
+        ].map(escapeCell).join(',');
+      });
+
+      const csvContent = [headers.map(escapeCell).join(','), ...csvRows].join('
+');
+
+      const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'relatorio_estoque.csv');
+      link.style.visibility = 'hidden';
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    });
+  }
 
   fetchStock();
 });
