@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderDashboard();
     } catch (error) {
       console.error('Erro ao buscar dados do estoque:', error);
+      dashboardContainer.innerHTML = '<p style="color: red;">Erro ao carregar o estoque. Verifique o console para mais detalhes.</p>';
     }
   };
 
@@ -32,35 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.appendChild(title);
 
       const table = document.createElement('table');
-      table.innerHTML = `
-        <thead>
-          <tr>
-            <th>Produto</th>
-            <th>Quantidade</th>
-            <th>Status</th>
-            <th>Responsável</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${groupedByLocation[location].map(item => `
-            <tr data-id="${item.id}">
-              <td>${item.produto}</td>
-              <td data-field="quantidade">${item.quantidade}</td>
-              <td>
-                <button class="status-button ${item.quantidade < 50 ? 'status-red' : item.quantidade < 70 ? 'status-yellow' : 'status-green'}">
-                  ${item.quantidade < 50 ? 'Baixo' : item.quantidade < 70 ? 'Revisar' : 'OK'}
-                </button>
-              </td>
-              <td data-field="responsavel">${item.responsavel}</td>
-              <td>
-                <button class="edit-button">Editar</button>
-                <button class="save-button" style="display:none;">Salvar</button>
-              </td>
-            </tr>
-          `).join('')}
-        </tbody>
-      `;
+      table.innerHTML = "\n        <thead>\n          <tr>\n            <th>Produto</th>\n            <th>Quantidade</th>\n            <th>Status</th>\n            <th>Responsável</th>\n            <th>Ações</th>\n          </tr>\n        </thead>\n        <tbody>\n          ${groupedByLocation[location].map(item => `\n            <tr data-id=\"${"item.id"}\">\n              <td>${"item.produto"}</td>\n              <td data-field=\"quantidade\">${item.quantidade}</td>\n              <td>\n                <button class=\"status-button ${"item.quantidade < 50 ? 'status-red' : item.quantidade < 70 ? 'status-yellow' : 'status-green'}\">\n                  ${"item.quantidade < 50 ? 'Baixo' : item.quantidade < 70 ? 'Revisar' : 'OK'}"}</button>\n              </td>\n              <td data-field=\"responsavel\">${item.responsavel}</td>\n              <td>\n                <button class=\"edit-button\">Editar</button>\n                <button class=\"save-button\" style=\"display:none;\">Salvar</button>\n              </td>\n            </tr>\n          `).join('')}\n        </tbody>\n      ";
       card.appendChild(table);
       dashboardContainer.appendChild(card);
     }
@@ -108,46 +81,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  refreshButton.addEventListener('click', fetchStock);
+  if (refreshButton) {
+    refreshButton.addEventListener('click', fetchStock);
+  }
 
-  downloadButton.addEventListener('click', () => {
-    if (stockData.length === 0) {
-      alert('Não há dados para baixar.');
-      return;
-    }
+  if (downloadButton) {
+    downloadButton.addEventListener('click', () => {
+      if (stockData.length === 0) {
+        alert('Não há dados para baixar.');
+        return;
+      }
 
-    const headers = ['ID', 'Produto', 'Quantidade', 'Responsável', 'Local'];
-    
-    const escapeCell = (cell) => {
-      const cellStr = String(cell == null ? '' : cell).replace(/"/g, '""');
-      return `"${cellStr}"`;
-    };
+      const headers = ['ID', 'Produto', 'Quantidade', 'Responsável', 'Local'];
+      
+      const escapeCell = (cell) => {
+        const cellStr = String(cell == null ? '' : cell).replace(/"/g, '""');
+        return `"${cellStr}"`;
+      };
 
-    const csvRows = stockData.map(item => {
-      return [
-        item.id,
-        item.produto,
-        item.quantidade,
-        item.responsavel,
-        item.local
-      ].map(escapeCell).join(',');
+      const csvRows = stockData.map(item => {
+        return [
+          item.id,
+          item.produto,
+          item.quantidade,
+          item.responsavel,
+          item.local
+        ].map(escapeCell).join(',');
+      });
+
+      const csvContent = [headers.map(escapeCell).join(','), ...csvRows].join('\n');
+
+      const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'relatorio_estoque.csv');
+      link.style.visibility = 'hidden';
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
     });
-
-    const csvContent = [headers.map(escapeCell).join(','), ...csvRows].join('\n');
-
-    const blob = new Blob(['﻿' + csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'relatorio_estoque.csv');
-    link.style.visibility = 'hidden';
-    
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  });
+  }
 
   fetchStock();
 });
