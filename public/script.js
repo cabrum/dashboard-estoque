@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const dashboardContainer = document.getElementById('dashboard-container');
   const downloadButton = document.getElementById('download-button');
+  const refreshButton = document.getElementById('refresh-button');
   let stockData = [];
 
   const fetchStock = async () => {
@@ -108,6 +109,45 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   refreshButton.addEventListener('click', fetchStock);
+
+  downloadButton.addEventListener('click', () => {
+    if (stockData.length === 0) {
+      alert('Não há dados para baixar.');
+      return;
+    }
+
+    const headers = ['ID', 'Produto', 'Quantidade', 'Responsável', 'Local'];
+    
+    const escapeCell = (cell) => {
+      const cellStr = String(cell == null ? '' : cell).replace(/"/g, '""');
+      return `"${cellStr}"`;
+    };
+
+    const csvRows = stockData.map(item => {
+      return [
+        item.id,
+        item.produto,
+        item.quantidade,
+        item.responsavel,
+        item.local
+      ].map(escapeCell).join(',');
+    });
+
+    const csvContent = [headers.map(escapeCell).join(','), ...csvRows].join('\n');
+
+    const blob = new Blob(['﻿' + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'relatorio_estoque.csv');
+    link.style.visibility = 'hidden';
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  });
 
   fetchStock();
 });
