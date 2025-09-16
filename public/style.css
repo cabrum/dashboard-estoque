@@ -1,0 +1,115 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f4f7f9;
+  --card-background: #ffffff;
+  --text-color: #34495e;
+  --header-color: #2c3e50;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+header {
+  background-color: var(--header-color);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+main {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+}
+
+.location-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.location-card h2 {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+input {
+  width: 95%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.save-button {
+    background-color: var(--secondary-color);
+}
+
+#refresh-button {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
