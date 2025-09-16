@@ -2,7 +2,6 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { Parser } = require('json2csv');
 
 const app = express();
 const PORT = 3000;
