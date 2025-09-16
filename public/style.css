@@ -113,3 +113,31 @@ button:hover {
     gap: 1rem;
   }
 }
+
+/* Status Buttons */
+.status-button {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: none;
+  font-size: 0.8rem;
+  min-width: 70px;
+  text-align: center;
+  cursor: default;
+}
+
+.status-button:hover {
+  opacity: 1;
+}
+
+.status-red {
+  background-color: #e74c3c;
+}
+
+.status-yellow {
+  background-color: #f1c40f;
+}
+
+.status-green {
+  background-color: var(--secondary-color);
+}
