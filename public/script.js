@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const dashboardContainer = document.getElementById('dashboard-container');
-  const refreshButton = document.getElementById('refresh-button');
+  const downloadButton = document.getElementById('download-button');
   let stockData = [];
 
   const fetchStock = async () => {
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <tr>
             <th>Produto</th>
             <th>Quantidade</th>
+            <th>Status</th>
             <th>Responsável</th>
             <th>Ações</th>
           </tr>
@@ -45,6 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <tr data-id="${item.id}">
               <td>${item.produto}</td>
               <td data-field="quantidade">${item.quantidade}</td>
+              <td>
+                <button class="status-button ${item.quantidade < 50 ? 'status-red' : item.quantidade < 70 ? 'status-yellow' : 'status-green'}">
+                  ${item.quantidade < 50 ? 'Baixo' : item.quantidade < 70 ? 'Revisar' : 'OK'}
+                </button>
+              </td>
               <td data-field="responsavel">${item.responsavel}</td>
               <td>
                 <button class="edit-button">Editar</button>
