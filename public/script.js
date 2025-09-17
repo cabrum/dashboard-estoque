@@ -7,16 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const fetchStock = async () => {
     try {
       const response = await fetch('/api/stock');
+      console.log('Response from /api/stock:', response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       stockData = await response.json();
+      console.log('Stock data received:', stockData);
       renderDashboard();
     } catch (error) {
       console.error('Erro ao buscar dados do estoque:', error);
-      dashboardContainer.innerHTML = '<p style="color: red;">Erro ao carregar o estoque. Verifique o console para mais detalhes.</p>';
+      dashboardContainer.innerHTML = `<p style="color: red;">Erro ao carregar o estoque: ${error.message}. Verifique o console para mais detalhes.</p>`;
     }
   };
 
   const renderDashboard = () => {
     dashboardContainer.innerHTML = '';
+
+    if (!stockData || stockData.length === 0) {
+      dashboardContainer.innerHTML = '<p>Nenhum dado de estoque encontrado. Tente atualizar a página ou contate o suporte.</p>';
+      return;
+    }
 
     const groupedByLocation = stockData.reduce((acc, item) => {
       acc[item.local] = acc[item.local] || [];
