@@ -152,6 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
       link.click();
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
+      // A requisição para download agora é tratada pelo backend,
+      // que utiliza a biblioteca json2csv para gerar o arquivo.
+      window.location.href = '/api/stock/download';
     });
   }
 
