@@ -28,15 +28,29 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const groupedByLocation = stockData.reduce((acc, item) => {
-      acc[item.local] = acc[item.local] || [];
-      acc[item.local].push(item);
-      return acc;
-    }, {});
+    let itemsForCurrentLocation;
 
-    const itemsForCurrentLocation = groupedByLocation[currentLocation];
+    if (currentLocation === 'Estoque Geral') {
+      const aggregatedStock = {};
+      stockData.forEach(item => {
+        if (item.local !== 'Estoque Geral') {
+          if (!aggregatedStock[item.produto]) {
+            aggregatedStock[item.produto] = { ...item, quantidade: 0, responsavel: '' };
+          }
+          aggregatedStock[item.produto].quantidade += item.quantidade;
+        }
+      });
+      itemsForCurrentLocation = Object.values(aggregatedStock);
+    } else {
+      const groupedByLocation = stockData.reduce((acc, item) => {
+        acc[item.local] = acc[item.local] || [];
+        acc[item.local].push(item);
+        return acc;
+      }, {});
+      itemsForCurrentLocation = groupedByLocation[currentLocation] || [];
+    }
 
-    if (!itemsForCurrentLocation || itemsForCurrentLocation.length === 0) {
+    if (itemsForCurrentLocation.length === 0) {
       dashboardContainer.innerHTML = `<p>Nenhum item encontrado para ${currentLocation}.</p>`;
       return;
     }
@@ -69,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${item.quantidade < 50 ? 'Baixo' : item.quantidade < 70 ? 'Revisar' : 'OK'}
               </button>
             </td>
-            <td data-field="responsavel">${item.responsavel}</td>
+            <td data-field="responsavel">${item.responsavel || ''}</td>
             <td>
               ${currentLocation !== 'Estoque Geral' ? 
                 `<button class="edit-button">Editar</button>
