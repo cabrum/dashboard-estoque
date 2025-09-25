@@ -231,6 +231,8 @@ button:active {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
 }
 
+.edit-button { border: 2px solid red; overflow: visible !important; }
+
 #refresh-button {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
 }
@@ -365,4 +367,8 @@ button:active {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.hidden {
+  display: none !important;
 }

@@ -1,48 +1,59 @@
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
+const pool = require('./db'); // Import the pool
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-const dataPath = path.join(__dirname, 'data.json');
-
 // Rota para obter os dados do estoque
-app.get('/api/stock', (req, res) => {
-  console.log('Recebida requisição para /api/stock');
-  fs.readFile(dataPath, 'utf8', (err, data) => {
-    if (err) {
-      console.error('ERRO AO LER data.json:', err);
-      return res.status(500).send('Erro ao ler o arquivo de dados do estoque.');
-    }
-    try {
-      const jsonData = JSON.parse(data);
-      console.log('Sucesso ao ler e analisar data.json, enviando dados.');
-      res.json(jsonData);
-    } catch (parseErr) {
-      console.error('ERRO AO ANALISAR JSON de data.json:', parseErr);
-      res.status(500).send('Erro: O formato do arquivo de dados (data.json) é inválido.');
-    }
-  });
+app.get('/api/stock', async (req, res) => {
+  console.log('Request received for /api/stock');
+  try {
+    const { rows } = await pool.query('SELECT * FROM stock ORDER BY id ASC');
+    console.log('Successfully fetched stock data from DB.');
+    res.json(rows);
+  } catch (err) {
+    console.error('ERROR FETCHING FROM DB:', err);
+    res.status(500).send('Error reading stock data.');
+  }
 });
 
 // Rota para atualizar os dados do estoque
-app.put('/api/stock', (req, res) => {
+app.put('/api/stock', async (req, res) => {
   const newStock = req.body;
-  fs.writeFile(dataPath, JSON.stringify(newStock, null, 2), (err) => {
-    if (err) {
-      res.status(500).send('Erro ao salvar os dados do estoque.');
-      return;
+  const client = await pool.connect();
+
+  try {
+    await client.query('BEGIN'); // Start transaction
+
+    for (const item of newStock) {
+      await client.query(
+        'UPDATE stock SET quantidade = $1, responsavel = $2 WHERE id = $3',
+        [item.quantidade, item.responsavel, item.id]
+      );
     }
-    res.send('Estoque atualizado com sucesso!');
-  });
+
+    await client.query('COMMIT'); // Commit transaction
+    res.send('Stock updated successfully!');
+  } catch (err) {
+    await client.query('ROLLBACK'); // Rollback on error
+    console.error('ERROR UPDATING DB:', err);
+    res.status(500).send('Error saving stock data.');
+  } finally {
+    client.release();
+  }
 });
 
 // Servir arquivos estáticos da pasta 'public'
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Rota para servir o index.html para qualquer outra rota
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

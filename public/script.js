@@ -66,12 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
               <td data-field="responsavel">${item.responsavel}</td>
               <td>
                 <button class="edit-button">Editar</button>
-                <button class="save-button" style="display:none;">Salvar</button>
+                <button class="save-button hidden">Salvar</button>
               </td>
             </tr>
           `).join('')}
         </tbody>
       `;
+      console.log('Table HTML:', table.innerHTML);
       card.appendChild(table);
       dashboardContainer.appendChild(card);
     }
@@ -104,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
       quantityCell.innerHTML = `<input type="number" value="${item.quantidade}">`;
       responsibleCell.innerHTML = `<input type="text" value="${item.responsavel}">`;
 
-      target.style.display = 'none';
-      row.querySelector('.save-button').style.display = 'inline-block';
+      target.classList.add('hidden');
+      row.querySelector('.save-button').classList.remove('hidden');
     }
 
     if (target.classList.contains('save-button')) {
