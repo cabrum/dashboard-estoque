@@ -50,7 +50,7 @@ app.put('/api/stock', async (req, res) => {
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Rota para servir o index.html para qualquer outra rota
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
