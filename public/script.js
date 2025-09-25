@@ -1,22 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   const dashboardContainer = document.getElementById('dashboard-container');
-  
   const refreshButton = document.getElementById('refresh-button');
+  const locationNav = document.getElementById('location-nav');
+  
   let stockData = [];
+  let currentLocation = 'Estoque Geral'; // Default location
 
   const fetchStock = async () => {
     try {
       const response = await fetch('/api/stock');
-      console.log('Response from /api/stock:', response);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       stockData = await response.json();
-      console.log('Stock data received:', stockData);
       renderDashboard();
     } catch (error) {
       console.error('Erro ao buscar dados do estoque:', error);
-      dashboardContainer.innerHTML = `<p style="color: red;">Erro ao carregar o estoque: ${error.message}. Verifique o console para mais detalhes.</p>`;
+      dashboardContainer.innerHTML = `<p style="color: red;">Erro ao carregar o estoque: ${error.message}.</p>`;
     }
   };
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dashboardContainer.innerHTML = '';
 
     if (!stockData || stockData.length === 0) {
-      dashboardContainer.innerHTML = '<p>Nenhum dado de estoque encontrado. Tente atualizar a página ou contate o suporte.</p>';
+      dashboardContainer.innerHTML = '<p>Nenhum dado de estoque encontrado.</p>';
       return;
     }
 
@@ -34,48 +34,52 @@ document.addEventListener('DOMContentLoaded', () => {
       return acc;
     }, {});
 
-    for (const location in groupedByLocation) {
-      const card = document.createElement('div');
-      card.className = 'location-card';
+    const itemsForCurrentLocation = groupedByLocation[currentLocation];
 
-      const title = document.createElement('h2');
-      title.textContent = location;
-      card.appendChild(title);
-
-      const table = document.createElement('table');
-      table.innerHTML = `
-        <thead>
-          <tr>
-            <th>Produto</th>
-            <th>Quantidade</th>
-            <th>Status</th>
-            <th>Responsável</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${groupedByLocation[location].map(item => `
-            <tr data-id="${item.id}">
-              <td>${item.produto}</td>
-              <td data-field="quantidade">${item.quantidade}</td>
-              <td>
-                <button class="status-button ${item.quantidade < 50 ? 'status-red' : item.quantidade < 70 ? 'status-yellow' : 'status-green'}">
-                  ${item.quantidade < 50 ? 'Baixo' : item.quantidade < 70 ? 'Revisar' : 'OK'}
-                </button>
-              </td>
-              <td data-field="responsavel">${item.responsavel}</td>
-              <td>
-                <button class="edit-button">Editar</button>
-                <button class="save-button hidden">Salvar</button>
-              </td>
-            </tr>
-          `).join('')}
-        </tbody>
-      `;
-      console.log('Table HTML:', table.innerHTML);
-      card.appendChild(table);
-      dashboardContainer.appendChild(card);
+    if (!itemsForCurrentLocation || itemsForCurrentLocation.length === 0) {
+      dashboardContainer.innerHTML = `<p>Nenhum item encontrado para ${currentLocation}.</p>`;
+      return;
     }
+
+    const card = document.createElement('div');
+    card.className = 'location-card';
+
+    const title = document.createElement('h2');
+    title.textContent = currentLocation;
+    card.appendChild(title);
+
+    const table = document.createElement('table');
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Status</th>
+          <th>Responsável</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${itemsForCurrentLocation.map(item => `
+          <tr data-id="${item.id}">
+            <td>${item.produto}</td>
+            <td data-field="quantidade">${item.quantidade}</td>
+            <td>
+              <button class="status-button ${item.quantidade < 50 ? 'status-red' : item.quantidade < 70 ? 'status-yellow' : 'status-green'}">
+                ${item.quantidade < 50 ? 'Baixo' : item.quantidade < 70 ? 'Revisar' : 'OK'}
+              </button>
+            </td>
+            <td data-field="responsavel">${item.responsavel}</td>
+            <td>
+              <button class="edit-button">Editar</button>
+              <button class="save-button hidden">Salvar</button>
+            </td>
+          </tr>
+        `).join('')}
+      </tbody>
+    `;
+    card.appendChild(table);
+    dashboardContainer.appendChild(card);
   };
 
   const updateStock = async () => {
@@ -120,11 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  locationNav.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target.tagName === 'BUTTON') {
+      currentLocation = target.getAttribute('data-location');
+      
+      // Update active button
+      document.querySelectorAll('.location-button').forEach(btn => btn.classList.remove('active'));
+      target.classList.add('active');
+      
+      renderDashboard();
+    }
+  });
+
   if (refreshButton) {
     refreshButton.addEventListener('click', fetchStock);
   }
-
-  
 
   fetchStock();
 });
