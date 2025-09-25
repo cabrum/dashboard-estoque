@@ -71,8 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </td>
             <td data-field="responsavel">${item.responsavel}</td>
             <td>
-              <button class="edit-button">Editar</button>
-              <button class="save-button hidden">Salvar</button>
+              ${currentLocation !== 'Estoque Geral' ? 
+                `<button class="edit-button">Editar</button>
+                <button class="save-button hidden">Salvar</button>` : ''}
             </td>
           </tr>
         `).join('')}
