@@ -6,8 +6,379 @@
   <title>Dashboard de Controle de Estoque</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --surface-dark: #1a1d29;
+      --surface-light: #252837;
+      --surface-lighter: #2d3142;
+      --text-primary: #ffffff;
+      --text-secondary: #a8b2d1;
+      --text-muted: #6c7293;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --shadow-light: rgba(0, 0, 0, 0.1);
+      --shadow-medium: rgba(0, 0, 0, 0.2);
+      --shadow-heavy: rgba(0, 0, 0, 0.3);
+      --glassmorphism: rgba(255, 255, 255, 0.05);
+      --glassmorphism-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--surface-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+      z-index: -1;
+    }
+
+    header {
+      background: rgba(37, 40, 55, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glassmorphism-border);
+      padding: 2rem 2rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 2rem;
+      text-align: center;
+      letter-spacing: -0.02em;
+      text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+    }
+
+    #location-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .location-button {
+      background: var(--glassmorphism);
+      border: 1px solid var(--glassmorphism-border);
+      color: var(--text-secondary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .location-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--accent-gradient);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .location-button:hover {
+      color: var(--text-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+      border-color: rgba(79, 172, 254, 0.5);
+    }
+
+    .location-button:hover::before {
+      left: 0;
+    }
+
+    .location-button.active {
+      background: var(--primary-gradient);
+      color: var(--text-primary);
+      border-color: transparent;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .location-button.active::before {
+      display: none;
+    }
+
+    #refresh-button {
+      display: block;
+      margin: 0 auto;
+      background: var(--secondary-gradient);
+      border: none;
+      color: var(--text-primary);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+    }
+
+    #refresh-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    #refresh-button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
+    }
+
+    #refresh-button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    #refresh-button:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Estilos para as tabelas que serão inseridas dinamicamente */
+    .stock-table-container {
+      background: var(--glassmorphism);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 1px solid var(--glassmorphism-border);
+      overflow: hidden;
+      box-shadow: 0 8px 32px var(--shadow-medium);
+      margin-bottom: 2rem;
+    }
+
+    .stock-table-header {
+      background: var(--surface-lighter);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .stock-table-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: var(--surface-lighter);
+    }
+
+    th, td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: rgba(45, 49, 66, 0.5);
+    }
+
+    td {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    tbody tr {
+      transition: all 0.2s ease;
+    }
+
+    tbody tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: scale(1.005);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Estilos para células com números */
+    td[data-type="number"] {
+      font-weight: 500;
+      text-align: right;
+    }
+
+    /* Estilos para status/indicadores */
+    .status-low {
+      color: #ff6b6b;
+      font-weight: 600;
+    }
+
+    .status-medium {
+      color: #ffd93d;
+      font-weight: 600;
+    }
+
+    .status-high {
+      color: #6bcf7f;
+      font-weight: 600;
+    }
+
+    /* Loading placeholder */
+    .loading-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      background: var(--glassmorphism);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 1px solid var(--glassmorphism-border);
+      margin-bottom: 2rem;
+    }
+
+    .loading-text {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* Responsividade aprimorada */
+    @media (max-width: 768px) {
+      header {
+        padding: 1.5rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+      }
+
+      #location-nav {
+        gap: 0.5rem;
+      }
+
+      .location-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+      }
+
+      #refresh-button {
+        padding: 0.875rem 2rem;
+        font-size: 0.9rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      th, td {
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .location-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+      }
+
+      th, td {
+        padding: 0.5rem 0.75rem;
+      }
+    }
+
+    /* Animações suaves */
+    * {
+      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Loading state para o botão de refresh */
+    #refresh-button.loading {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--surface-dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--surface-lighter);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--surface-light);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -24,7 +395,7 @@
       <button class="location-button" data-location="Base Ubatuba">Base Ubatuba</button>
       <button class="location-button" data-location="Base Angra dos Reis">Base Angra dos Reis</button>
       <button class="location-button" data-location="Base Sakamoto">Base Sakamoto</button>
-      <button class="location-button" data-location="Base Fernão Dias">Base Fernão Dias</button>
+      <button class="location-button" data-location="Base FernÃ£o Dias">Base FernÃ£o Dias</button>
       <button class="location-button" data-location="Base Vila Maria">Base Vila Maria</button>
     </nav>
     <button id="refresh-button">Atualizar Dados</button>
@@ -32,6 +403,51 @@
   <main id="dashboard-container">
     <!-- As tabelas de estoque por local serão inseridas aqui -->
   </main>
-  <script src="script.js"></script>
+
+  <script>
+    // Script básico para demonstrar interatividade
+    document.addEventListener('DOMContentLoaded', function() {
+      const locationButtons = document.querySelectorAll('.location-button');
+      const refreshButton = document.getElementById('refresh-button');
+
+      // Alternar entre locais
+      locationButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          locationButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Aqui você conectaria com o script.js original
+          console.log('Local selecionado:', this.dataset.location);
+        });
+      });
+
+      // Botão de refresh com efeito de loading
+      refreshButton.addEventListener('click', function() {
+        this.classList.add('loading');
+        
+        // Simular carregamento
+        setTimeout(() => {
+          this.classList.remove('loading');
+          console.log('Dados atualizados');
+        }, 2000);
+      });
+
+      // Adicionar efeitos de hover suaves nos botões
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+          this.style.transform = this.classList.contains('location-button') 
+            ? 'translateY(-2px)' 
+            : 'translateY(-3px) scale(1.05)';
+        });
+
+        button.addEventListener('mouseleave', function() {
+          if (!this.classList.contains('active')) {
+            this.style.transform = '';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
