@@ -158,17 +158,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const exportToCsv = (data) => {
-    const headers = ['id', 'produto', 'quantidade', 'local', 'responsavel'];
+    // Agrupar dados por produto e somar quantidades
+    const aggregatedData = {};
+    
+    data.forEach(item => {
+      if (!aggregatedData[item.produto]) {
+        aggregatedData[item.produto] = {
+          produto: item.produto,
+          quantidadeTotal: 0
+        };
+      }
+      aggregatedData[item.produto].quantidadeTotal += item.quantidade;
+    });
+
+    // Converter para array e ordenar por quantidade (maior para menor)
+    const sortedData = Object.values(aggregatedData).sort((a, b) => b.quantidadeTotal - a.quantidadeTotal);
+
+    // Criar CSV simplificado
+    const headers = ['Produto', 'Quantidade Total'];
     const csvRows = [];
     csvRows.push(headers.join(','));
 
-    for (const row of data) {
-        const values = headers.map(header => {
-            const val = row[header] === null || row[header] === undefined ? '' : row[header];
+    for (const row of sortedData) {
+        const values = [
+          row.produto,
+          row.quantidadeTotal
+        ];
+        
+        const escapedValues = values.map(val => {
             const escaped = ('' + val).replace(/"/g, '""'); // Escape double quotes
             return `"${escaped}"`;
         });
-        csvRows.push(values.join(','));
+        csvRows.push(escapedValues.join(','));
     }
 
     const csvString = csvRows.join('\n');
@@ -176,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', 'estoque.csv');
+    link.setAttribute('download', 'estoque_resumido.csv');
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
