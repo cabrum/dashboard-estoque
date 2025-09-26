@@ -55,6 +55,11 @@ header h1 {
   white-space: nowrap;
 }
 
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
 #location-nav {
   display: flex;
   gap: 0.5rem;
@@ -134,7 +139,7 @@ button {
   font-weight: 500;
 }
 
-#refresh-button, .edit-button, .save-button {
+#refresh-button, #export-button, .edit-button, .save-button {
   padding: 0.5rem 1rem;
   border: 1px solid var(--border-color);
   background-color: var(--card-background);

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dashboardContainer = document.getElementById('dashboard-container');
   const refreshButton = document.getElementById('refresh-button');
   const locationNav = document.getElementById('location-nav');
+  const exportButton = document.getElementById('export-button');
   
   let stockData = [];
   let currentLocation = 'Estoque Geral'; // Default location
@@ -154,6 +155,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (refreshButton) {
     refreshButton.addEventListener('click', fetchStock);
+  }
+
+  const exportToCsv = (data) => {
+    const headers = ['id', 'produto', 'quantidade', 'local', 'responsavel'];
+    const csvRows = [];
+    csvRows.push(headers.join(','));
+
+    for (const row of data) {
+        const values = headers.map(header => {
+            const val = row[header] === null || row[header] === undefined ? '' : row[header];
+            const escaped = ('' + val).replace(/"/g, '""'); // Escape double quotes
+            return `"${escaped}"`;
+        });
+        csvRows.push(values.join(','));
+    }
+
+    const csvString = csvRows.join('\n');
+    const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'estoque.csv');
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  if (exportButton) {
+    exportButton.addEventListener('click', () => {
+        exportToCsv(stockData);
+    });
   }
 
   fetchStock();
