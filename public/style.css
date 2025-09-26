@@ -63,9 +63,9 @@ header h1 {
 
 .location-button {
   font-family: var(--font-family);
-  background-color: transparent;
-  color: var(--secondary-text);
-  border: 1px solid transparent;
+  background-color: var(--card-background);
+  color: var(--primary-text);
+  border: 1px solid var(--border-color);
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
   cursor: pointer;
