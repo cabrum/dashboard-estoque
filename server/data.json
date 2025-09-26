@@ -1013,5 +1013,61 @@
     "quantidade": 200,
     "local": "Base SJC Conteiners",
     "responsavel": ""
+  },
+  {
+    "id": 146,
+    "produto": "Poste metálico engastado - 12 mts",
+    "quantidade": 364,
+    "local": "Base SJC / Canteiro Kodak",
+    "responsavel": ""
+  },
+  {
+    "id": 147,
+    "produto": "Poste de fibra para barreira",
+    "quantidade": 2,
+    "local": "Base SJC / Canteiro Kodak",
+    "responsavel": ""
+  },
+  {
+    "id": 148,
+    "produto": "Suporte duplo para poste engastado",
+    "quantidade": 55,
+    "local": "Base SJC / Canteiro Kodak",
+    "responsavel": ""
+  },
+  {
+    "id": 149,
+    "produto": "Suporte unitario para poste engastado",
+    "quantidade": 262,
+    "local": "Base SJC / Canteiro Kodak",
+    "responsavel": ""
+  },
+  {
+    "id": 150,
+    "produto": "Poste metálico engastado - 12 mts",
+    "quantidade": 364,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 151,
+    "produto": "Poste de fibra para barreira",
+    "quantidade": 2,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 152,
+    "produto": "Suporte duplo para poste engastado",
+    "quantidade": 55,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 153,
+    "produto": "Suporte unitario para poste engastado",
+    "quantidade": 262,
+    "local": "Estoque Geral",
+    "responsavel": ""
   }
 ]
