@@ -1153,5 +1153,19 @@
     "quantidade": 0,
     "local": "Estoque Geral",
     "responsavel": ""
+  },
+  {
+    "id": 166,
+    "produto": "Postes de concreto 7,5mts",
+    "quantidade": 34,
+    "local": "Base Ubatuba",
+    "responsavel": ""
+  },
+  {
+    "id": 167,
+    "produto": "Postes de concreto 7,5mts",
+    "quantidade": 34,
+    "local": "Estoque Geral",
+    "responsavel": ""
   }
 ]
