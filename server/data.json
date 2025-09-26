@@ -1069,5 +1069,89 @@
     "quantidade": 262,
     "local": "Estoque Geral",
     "responsavel": ""
+  },
+  {
+    "id": 154,
+    "produto": "Poste metálico 400 dan travessia - 14 metros",
+    "quantidade": 8,
+    "local": "Base SJC / Canteiro Unip",
+    "responsavel": ""
+  },
+  {
+    "id": 155,
+    "produto": "Postes metalicos 12 metros",
+    "quantidade": 55,
+    "local": "Base SJC / Canteiro Unip",
+    "responsavel": ""
+  },
+  {
+    "id": 156,
+    "produto": "Poste de fibra para barreira",
+    "quantidade": 1,
+    "local": "Base SJC / Canteiro Unip",
+    "responsavel": ""
+  },
+  {
+    "id": 157,
+    "produto": "Suporte duplo para poste de fibra",
+    "quantidade": 1,
+    "local": "Base SJC / Canteiro Unip",
+    "responsavel": ""
+  },
+  {
+    "id": 158,
+    "produto": "Suporte duplo para poste engastado",
+    "quantidade": 141,
+    "local": "Base SJC / Canteiro Unip",
+    "responsavel": ""
+  },
+  {
+    "id": 159,
+    "produto": "Suporte unitario para poste engastado",
+    "quantidade": 0,
+    "local": "Base SJC / Canteiro Unip",
+    "responsavel": ""
+  },
+  {
+    "id": 160,
+    "produto": "Poste metálico 400 dan travessia - 14 metros",
+    "quantidade": 8,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 161,
+    "produto": "Postes metalicos 12 metros",
+    "quantidade": 55,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 162,
+    "produto": "Poste de fibra para barreira",
+    "quantidade": 1,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 163,
+    "produto": "Suporte duplo para poste de fibra",
+    "quantidade": 1,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 164,
+    "produto": "Suporte duplo para poste engastado",
+    "quantidade": 141,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 165,
+    "produto": "Suporte unitario para poste engastado",
+    "quantidade": 0,
+    "local": "Estoque Geral",
+    "responsavel": ""
   }
 ]
