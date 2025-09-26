@@ -17,9 +17,11 @@ const stockData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 const initDatabase = async () => {
   const client = await pool.connect();
   try {
-    // Create table if it doesn't exist
+    await client.query('DROP TABLE IF EXISTS stock;');
+
+    // Create table
     await client.query(`
-      CREATE TABLE IF NOT EXISTS stock (
+      CREATE TABLE stock (
         id SERIAL PRIMARY KEY,
         produto VARCHAR(255) NOT NULL,
         quantidade INTEGER NOT NULL,
@@ -27,13 +29,6 @@ const initDatabase = async () => {
         responsavel VARCHAR(255)
       );
     `);
-
-    // Check if table is empty
-    const res = await client.query('SELECT COUNT(*) FROM stock');
-    if (res.rows[0].count > 0) {
-      console.log('Database already seeded.');
-      return;
-    }
 
     // Insert data
     for (const item of stockData) {
@@ -51,4 +46,4 @@ const initDatabase = async () => {
   }
 };
 
-initDatabase().then(() => pool.end());
+initDatabase();
