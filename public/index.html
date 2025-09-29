@@ -28,8 +28,46 @@
       <button class="location-button" data-location="Base Vila Maria">Base Vila Maria</button>
     </nav>
     <div class="header-actions">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar produtos...">
+        <select id="filter-select">
+          <option value="all">Todos os locais</option>
+          <option value="low-estoque">Estoque Baixo (<50)</option>
+          <option value="medium-estoque">Estoque Médio (50-70)</option>
+          <option value="high-estoque">Estoque Alto (>70)</option>
+        </select>
+      </div>
       <button id="export-button">Exportar para Excel</button>
       <button id="refresh-button">Atualizar Dados</button>
+      <button id="reports-button">Relatórios</button>
+    </div>
+    <div id="reports-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Relatórios e Estatísticas</h2>
+        <div class="reports-grid">
+          <div class="report-card">
+            <h3>Total de Produtos</h3>
+            <p id="total-products">0</p>
+          </div>
+          <div class="report-card">
+            <h3>Total em Estoque</h3>
+            <p id="total-quantity">0</p>
+          </div>
+          <div class="report-card">
+            <h3>Itens com Estoque Baixo</h3>
+            <p id="low-stock-items">0</p>
+          </div>
+          <div class="report-card">
+            <h3>Locais Ativos</h3>
+            <p id="active-locations">0</p>
+          </div>
+        </div>
+        <div class="report-actions">
+          <button id="export-detailed-btn">Exportar Relatório Detalhado</button>
+          <button id="export-summary-btn">Exportar Resumo</button>
+        </div>
+      </div>
     </div>
   </header>
   <main id="dashboard-container">
