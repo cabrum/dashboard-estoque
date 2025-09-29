@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     refreshButton.addEventListener('click', fetchStock);
   }
 
-  const exportToCsv = (data) => {
+  const exportSummaryByProductReport = (data) => {
     const aggregatedData = {};
     
     data.forEach(item => {
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const headers = ['Produto', 'Quantidade Total'];
     const csvRows = [];
-    csvRows.push(headers.join(','));
+    csvRows.push(headers.join(';'));
 
     for (const row of sortedData) {
         const values = [
@@ -287,15 +287,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const escaped = ('' + val).replace(/"/g, '""');
             return `"${escaped}"`;
         });
-        csvRows.push(escapedValues.join(','));
+        csvRows.push(escapedValues.join(';'));
     }
 
-    const csvString = csvRows.join('\n');
+    const csvString = '\uFEFF' + csvRows.join('\n');
     const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', 'estoque_resumido.csv');
+    link.setAttribute('download', 'estoque_resumido_por_produto.csv');
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (exportButton) {
     exportButton.addEventListener('click', () => {
-        exportToCsv(stockData);
+        exportDetailedReport(stockData);
     });
   }
 
@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const headers = ['ID', 'Produto', 'Quantidade', 'Local', 'Responsável', 'Status'];
       const csvRows = [];
-      csvRows.push(headers.join(','));
+      csvRows.push(headers.join(';'));
 
       const sortedData = [...stockData].sort((a, b) => a.local.localeCompare(b.local) || a.produto.localeCompare(b.produto));
 
@@ -457,10 +457,10 @@ document.addEventListener('DOMContentLoaded', () => {
           const escaped = ('' + val).replace(/"/g, '""');
           return `"${escaped}"`;
         });
-        csvRows.push(escapedValues.join(','));
+        csvRows.push(escapedValues.join(';'));
       }
 
-      const csvString = csvRows.join('\n');
+      const csvString = '\uFEFF' + csvRows.join('\n');
       const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const headers = ['Local', 'Total de Itens', 'Quantidade Total', 'Itens com Estoque Baixo'];
       const csvRows = [];
-      csvRows.push(headers.join(','));
+      csvRows.push(headers.join(';'));
 
       const sortedLocations = Object.values(locationSummary).sort((a, b) => a.local.localeCompare(b.local));
 
@@ -519,10 +519,10 @@ document.addEventListener('DOMContentLoaded', () => {
           const escaped = ('' + val).replace(/"/g, '""');
           return `"${escaped}"`;
         });
-        csvRows.push(escapedValues.join(','));
+        csvRows.push(escapedValues.join(';'));
       }
 
-      const csvString = csvRows.join('\n');
+      const csvString = '\uFEFF' + csvRows.join('\n');
       const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
