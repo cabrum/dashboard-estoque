@@ -26,6 +26,7 @@
       <button class="location-button" data-location="Base Sakamoto">Base Sakamoto</button>
       <button class="location-button" data-location="Base Fernão Dias">Base Fernão Dias</button>
       <button class="location-button" data-location="Base Vila Maria">Base Vila Maria</button>
+      <button class="location-button" data-location="Provisionado">Provisionado</button>
     </nav>
     <div class="header-actions">
       <div class="search-container">
@@ -70,6 +71,50 @@
       </div>
     </div>
   </header>
+  
+  <!-- Modal para Gerenciamento de Provisionados -->
+  <div id="provisionamento-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Gerenciar Provisionados</h2>
+      <div class="provisionamento-form">
+        <div class="form-group">
+          <label for="produto-select">Produto:</label>
+          <select id="produto-select">
+            <option value="">Selecione um produto...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quantidade-provisionada">Quantidade Provisionada:</label>
+          <input type="number" id="quantidade-provisionada" min="1" placeholder="Digite a quantidade...">
+        </div>
+        <div class="form-group">
+          <label for="tecnico-responsavel">Técnico Responsável:</label>
+          <input type="text" id="tecnico-responsavel" placeholder="Nome do técnico...">
+        </div>
+        <div class="form-group">
+          <label for="data-prevista">Data Prevista para Retirada:</label>
+          <input type="date" id="data-prevista">
+        </div>
+        <div class="form-group">
+          <label for="observacoes">Observações:</label>
+          <textarea id="observacoes" rows="3" placeholder="Observações sobre o provisionamento..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button id="adicionar-provisionado">Adicionar Provisionado</button>
+          <button id="limpar-form">Limpar</button>
+        </div>
+      </div>
+      
+      <div class="provisionados-list">
+        <h3>Provisionamentos Ativos</h3>
+        <div id="provisionados-container">
+          <!-- Lista de provisionamentos será inserida aqui -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <main id="dashboard-container">
     <!-- As tabelas de estoque por local serão inseridas aqui -->
   </main>
