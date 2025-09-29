@@ -30,8 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('/api/stock');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      }m
       stockData = await response.json();
+      await fetchProvisioning(); // Fetch provisioning data after stock data
+      populateProdutoSelect();
       renderDashboard();
     } catch (error) {
       console.error('Erro ao buscar dados do estoque:', error);
@@ -39,88 +41,106 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+
+  const fetchProvisioning = async () => {
+    try {
+      const response = await fetch('/api/provisioning');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      provisionadosData = await response.json();
+    } catch (error) {
+      console.error('Erro ao buscar dados de provisionamento:', error);
+    }
+  };
+
   const renderDashboard = () => {
-    dashboardContainer.innerHTML = '';
-
-    if (!stockData || stockData.length === 0) {
-      dashboardContainer.innerHTML = '<p>Nenhum dado de estoque encontrado.</p>';
-      return;
-    }
-
-    let itemsForCurrentLocation;
-
-    if (currentLocation === 'Estoque Geral') {
-      const aggregatedStock = {};
-      stockData.forEach(item => {
-        if (item.local !== 'Estoque Geral') {
-          if (!aggregatedStock[item.produto]) {
-            aggregatedStock[item.produto] = { ...item, quantidade: 0, responsavel: '' };
-          }
-          aggregatedStock[item.produto].quantidade += item.quantidade;
-        }
-      });
-      itemsForCurrentLocation = Object.values(aggregatedStock);
-    } else if (currentLocation === 'Provisionado') {
-      renderProvisionadosDashboard();
-      return;
+    if (searchInput.value || filterSelect.value !== 'all') {
+      applyFilters();
     } else {
-      const groupedByLocation = stockData.reduce((acc, item) => {
-        acc[item.local] = acc[item.local] || [];
-        acc[item.local].push(item);
-        return acc;
-      }, {});
-      itemsForCurrentLocation = groupedByLocation[currentLocation] || [];
-    }
+      // The original renderDashboard logic is now inside this else block
+      dashboardContainer.innerHTML = '';
 
-    if (itemsForCurrentLocation.length === 0) {
-      dashboardContainer.innerHTML = `<p>Nenhum item encontrado para ${currentLocation}.</p>`;
-      return;
-    }
+      if (!stockData || stockData.length === 0) {
+        dashboardContainer.innerHTML = '<p>Nenhum dado de estoque encontrado.</p>';
+        return;
+      }
 
-    const card = document.createElement('div');
-    card.className = 'location-card';
+      let itemsForCurrentLocation;
 
-    const title = document.createElement('h2');
-    title.textContent = currentLocation;
-    card.appendChild(title);
+      if (currentLocation === 'Estoque Geral') {
+        const aggregatedStock = {};
+        stockData.forEach(item => {
+          if (item.local !== 'Estoque Geral') {
+            if (!aggregatedStock[item.produto]) {
+              aggregatedStock[item.produto] = { ...item, quantidade: 0, responsavel: '' };
+            }
+            aggregatedStock[item.produto].quantidade += item.quantidade;
+          }
+        });
+        itemsForCurrentLocation = Object.values(aggregatedStock);
+      } else if (currentLocation === 'Provisionado') {
+        renderProvisionadosDashboard();
+        return;
+      } else {
+        const groupedByLocation = stockData.reduce((acc, item) => {
+          acc[item.local] = acc[item.local] || [];
+          acc[item.local].push(item);
+          return acc;
+        }, {});
+        itemsForCurrentLocation = groupedByLocation[currentLocation] || [];
+      }
 
-    const table = document.createElement('table');
-    table.innerHTML = `
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Quantidade</th>
-          <th>Provisionado</th>
-          <th>Status</th>
-          <th>Responsável</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${itemsForCurrentLocation.map(item => {
-          const provisionado = getProvisionadoByProduto(item.produto);
-          return `
-          <tr data-id="${item.id}">
-            <td>${item.produto}</td>
-            <td data-field="quantidade">${item.quantidade}</td>
-            <td>${provisionado ? provisionado.quantidade : '-'}</td>
-            <td>
-              <button class="status-button ${item.quantidade < 50 ? 'status-red' : item.quantidade < 70 ? 'status-yellow' : 'status-green'}">
-                ${item.quantidade < 50 ? 'Baixo' : item.quantidade < 70 ? 'Revisar' : 'OK'}
-              </button>
-            </td>
-            <td data-field="responsavel">${item.responsavel || ''}</td>
-            <td>
-              ${currentLocation !== 'Estoque Geral' ? 
-                `<button class="edit-button">Editar</button>
-                <button class="save-button hidden">Salvar</button>` : ''}
-            </td>
+      if (itemsForCurrentLocation.length === 0) {
+        dashboardContainer.innerHTML = `<p>Nenhum item encontrado para ${currentLocation}.</p>`;
+        return;
+      }
+
+      const card = document.createElement('div');
+      card.className = 'location-card';
+
+      const title = document.createElement('h2');
+      title.textContent = currentLocation;
+      card.appendChild(title);
+
+      const table = document.createElement('table');
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Provisionado</th>
+            <th>Status</th>
+            <th>Responsável</th>
+            <th>Ações</th>
           </tr>
-        `;}).join('')}
-      </tbody>
-    `;
-    card.appendChild(table);
-    dashboardContainer.appendChild(card);
+        </thead>
+        <tbody>
+          ${itemsForCurrentLocation.map(item => {
+            const provisionado = getProvisionadoByProduto(item.produto);
+            return `
+            <tr data-id="${item.id}">
+              <td>${item.produto}</td>
+              <td data-field="quantidade">${item.quantidade}</td>
+              <td>${provisionado ? provisionado.quantidade : '-'}</td>
+              <td>
+                <button class="status-button ${item.quantidade < 50 ? 'status-red' : item.quantidade < 70 ? 'status-yellow' : 'status-green'}">
+                  ${item.quantidade < 50 ? 'Baixo' : item.quantidade < 70 ? 'Revisar' : 'OK'}
+                </button>
+              </td>
+              <td data-field="responsavel">${item.responsavel || ''}</td>
+              <td>
+                ${currentLocation !== 'Estoque Geral' ? 
+                  `<button class="edit-button">Editar</button>
+                  <button class="save-button hidden">Salvar</button>` : ''}
+              </td>
+            </tr>
+          `;}).join('')}
+        </tbody>
+      `;
+      card.appendChild(table);
+      dashboardContainer.appendChild(card);
+    }
   };
 
   const renderProvisionadosDashboard = () => {
@@ -151,15 +171,15 @@ document.addEventListener('DOMContentLoaded', () => {
         </tr>
       </thead>
       <tbody>
-        ${provisionadosData.map((item, index) => `
-          <tr data-id="${index}">
+        ${provisionadosData.map(item => `
+          <tr data-id="${item.id}">
             <td>${item.produto}</td>
             <td>${item.quantidade}</td>
             <td>${item.tecnico}</td>
-            <td>${item.dataPrevista}</td>
+            <td>${new Date(item.data_prevista).toLocaleDateString()}</td>
             <td>${item.observacoes || '-'}</td>
             <td>
-              <button class="remover-provisionado" data-index="${index}">Remover</button>
+              <button class="remover-provisionado" data-id="${item.id}">Remover</button>
             </td>
           </tr>
         `).join('')}
@@ -223,6 +243,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // Update active button
       document.querySelectorAll('.location-button').forEach(btn => btn.classList.remove('active'));
       target.classList.add('active');
+      
+      if (currentLocation === 'Provisionado') {
+        populateProdutoSelect();
+      }
       
       renderDashboard();
     }
@@ -562,7 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const addProvisionado = () => {
+  const addProvisionado = async () => {
     const produto = produtoSelect.value;
     const quantidade = parseInt(quantidadeProvisionada.value);
     const tecnico = tecnicoResponsavel.value;
@@ -578,14 +602,29 @@ document.addEventListener('DOMContentLoaded', () => {
       produto,
       quantidade,
       tecnico,
-      dataPrevista: data,
+      data_prevista: data,
       observacoes: obs
     };
 
-    provisionadosData.push(provisionado);
-    renderProvisionadosList();
-    limparForm();
-    renderDashboard(); // Atualizar as tabelas para mostrar os provisionados
+    try {
+      const response = await fetch('/api/provisioning', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(provisionado),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      await fetchProvisioning(); // Refresh data
+      renderProvisionadosList();
+      limparForm();
+      renderDashboard(); // Update tables to show provisioned items
+    } catch (error) {
+      console.error('Erro ao adicionar provisionamento:', error);
+      alert('Erro ao salvar o provisionamento. Verifique o console para mais detalhes.');
+    }
   };
 
   const limparForm = () => {
@@ -604,7 +643,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    provisionadosData.forEach((item, index) => {
+    provisionadosData.forEach(item => {
       const provisionadoDiv = document.createElement('div');
       provisionadoDiv.className = 'provisionado-item';
       provisionadoDiv.innerHTML = `
@@ -617,7 +656,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <strong>Técnico:</strong> ${item.tecnico}
           </div>
           <div class="provisionado-detalhe">
-            <strong>Data:</strong> ${item.dataPrevista}
+            <strong>Data:</strong> ${new Date(item.data_prevista).toLocaleDateString()}
           </div>
           ${item.observacoes ? `
           <div class="provisionado-detalhe">
@@ -625,16 +664,45 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           ` : ''}
         </div>
-        <button class="remover-provisionado" data-index="${index}">Remover</button>
+        <button class="remover-provisionado" data-id="${item.id}">Remover</button>
       `;
       provisionadosContainer.appendChild(provisionadoDiv);
     });
   };
 
-  const removeProvisionado = (index) => {
-    provisionadosData.splice(index, 1);
-    renderProvisionadosList();
-    renderDashboard(); // Atualizar as tabelas
+  // Event listener para remover provisionados da lista
+  provisionadosContainer.addEventListener('click', (event) => {
+    if (event.target.classList.contains('remover-provisionado')) {
+      const id = parseInt(event.target.getAttribute('data-id'));
+      removeProvisionado(id);
+    }
+  });
+
+  // Event listener para remover provisionados da tabela
+  dashboardContainer.addEventListener('click', (event) => {
+    if (event.target.classList.contains('remover-provisionado')) {
+      const id = parseInt(event.target.getAttribute('data-id'));
+      removeProvisionado(id);
+    }
+  });
+
+  const removeProvisionado = async (id) => {
+    try {
+      const response = await fetch(`/api/provisioning/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      await fetchProvisioning(); // Refresh data
+      renderProvisionadosList();
+      renderDashboard(); // Update tables
+    } catch (error) {
+      console.error('Erro ao remover provisionamento:', error);
+      alert('Erro ao remover o provisionamento. Verifique o console para mais detalhes.');
+    }
   };
 
   // Event listeners para o sistema de provisionamento
