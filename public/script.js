@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('/api/stock');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
-      }m
+      }
       stockData = await response.json();
       await fetchProvisioning(); // Fetch provisioning data after stock data
       populateProdutoSelect();
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       dashboardContainer.innerHTML = `<p style="color: red;">Erro ao carregar o estoque: ${error.message}.</p>`;
     }
   };
-
 
   const fetchProvisioning = async () => {
     try {
@@ -58,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchInput.value || filterSelect.value !== 'all') {
       applyFilters();
     } else {
-      // The original renderDashboard logic is now inside this else block
       dashboardContainer.innerHTML = '';
 
       if (!stockData || stockData.length === 0) {
@@ -233,6 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       updateStock().then(fetchStock);
     }
+
+    if (event.target.classList.contains('remover-provisionado')) {
+      const id = parseInt(event.target.getAttribute('data-id'));
+      removeProvisionado(id);
+    }
   });
 
   locationNav.addEventListener('click', (event) => {
@@ -240,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (target.tagName === 'BUTTON') {
       currentLocation = target.getAttribute('data-location');
       
-      // Update active button
       document.querySelectorAll('.location-button').forEach(btn => btn.classList.remove('active'));
       target.classList.add('active');
       
@@ -257,7 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const exportToCsv = (data) => {
-    // Agrupar dados por produto e somar quantidades
     const aggregatedData = {};
     
     data.forEach(item => {
@@ -270,10 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
       aggregatedData[item.produto].quantidadeTotal += item.quantidade;
     });
 
-    // Converter para array e ordenar por quantidade (maior para menor)
     const sortedData = Object.values(aggregatedData).sort((a, b) => b.quantidadeTotal - a.quantidadeTotal);
 
-    // Criar CSV simplificado
     const headers = ['Produto', 'Quantidade Total'];
     const csvRows = [];
     csvRows.push(headers.join(','));
@@ -285,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
         
         const escapedValues = values.map(val => {
-            const escaped = ('' + val).replace(/"/g, '""'); // Escape double quotes
+            const escaped = ('' + val).replace(/"/g, '""');
             return `"${escaped}"`;
         });
         csvRows.push(escapedValues.join(','));
@@ -309,18 +308,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Função de busca e filtro
   const applyFilters = () => {
     const searchTerm = searchInput.value.toLowerCase();
     const filterValue = filterSelect.value;
 
     let dataToFilter = stockData;
 
-    // Aplicar filtro de localização
     if (currentLocation !== 'Estoque Geral') {
       dataToFilter = dataToFilter.filter(item => item.local === currentLocation);
     } else {
-      // Para Estoque Geral, agregar dados
       const aggregatedStock = {};
       dataToFilter.forEach(item => {
         if (item.local !== 'Estoque Geral') {
@@ -333,14 +329,12 @@ document.addEventListener('DOMContentLoaded', () => {
       dataToFilter = Object.values(aggregatedStock);
     }
 
-    // Aplicar busca por produto
     if (searchTerm) {
       dataToFilter = dataToFilter.filter(item => 
         item.produto.toLowerCase().includes(searchTerm)
       );
     }
 
-    // Aplicar filtro por nível de estoque
     if (filterValue !== 'all') {
       dataToFilter = dataToFilter.filter(item => {
         if (filterValue === 'low-estoque') return item.quantidade < 50;
@@ -404,11 +398,9 @@ document.addEventListener('DOMContentLoaded', () => {
     dashboardContainer.appendChild(card);
   };
 
-  // Event listeners para busca e filtro
   searchInput.addEventListener('input', applyFilters);
   filterSelect.addEventListener('change', applyFilters);
 
-  // Funções para relatórios e estatísticas
   const generateStatistics = () => {
     try {
       if (!stockData || stockData.length === 0) {
@@ -491,7 +483,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Agrupar por local
       const locationSummary = {};
       
       stockData.forEach(item => {
@@ -547,7 +538,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Event listeners para modal de relatórios
   reportsButton.addEventListener('click', () => {
     generateStatistics();
     reportsModal.classList.remove('hidden');
@@ -573,7 +563,6 @@ document.addEventListener('DOMContentLoaded', () => {
     reportsModal.classList.add('hidden');
   });
 
-  // Funções para o sistema de provisionamento
   const populateProdutoSelect = () => {
     produtoSelect.innerHTML = '<option value="">Selecione um produto...</option>';
     
@@ -617,10 +606,10 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      await fetchProvisioning(); // Refresh data
+      await fetchProvisioning();
       renderProvisionadosList();
       limparForm();
-      renderDashboard(); // Update tables to show provisioned items
+      renderDashboard();
     } catch (error) {
       console.error('Erro ao adicionar provisionamento:', error);
       alert('Erro ao salvar o provisionamento. Verifique o console para mais detalhes.');
@@ -670,22 +659,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Event listener para remover provisionados da lista
-  provisionadosContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('remover-provisionado')) {
-      const id = parseInt(event.target.getAttribute('data-id'));
-      removeProvisionado(id);
-    }
-  });
-
-  // Event listener para remover provisionados da tabela
-  dashboardContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('remover-provisionado')) {
-      const id = parseInt(event.target.getAttribute('data-id'));
-      removeProvisionado(id);
-    }
-  });
-
   const removeProvisionado = async (id) => {
     try {
       const response = await fetch(`/api/provisioning/${id}`, {
@@ -696,34 +669,15 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      await fetchProvisioning(); // Refresh data
+      await fetchProvisioning();
       renderProvisionadosList();
-      renderDashboard(); // Update tables
+      renderDashboard();
     } catch (error) {
       console.error('Erro ao remover provisionamento:', error);
       alert('Erro ao remover o provisionamento. Verifique o console para mais detalhes.');
     }
   };
 
-  // Event listeners para o sistema de provisionamento
-  locationNav.addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.tagName === 'BUTTON') {
-      currentLocation = target.getAttribute('data-location');
-      
-      // Update active button
-      document.querySelectorAll('.location-button').forEach(btn => btn.classList.remove('active'));
-      target.classList.add('active');
-      
-      if (currentLocation === 'Provisionado') {
-        populateProdutoSelect();
-      }
-      
-      renderDashboard();
-    }
-  });
-
-  // Event listener para o botão Provisionado
   const provisionadoButton = document.querySelector('button[data-location="Provisionado"]');
   if (provisionadoButton) {
     provisionadoButton.addEventListener('click', () => {
@@ -733,7 +687,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Event listeners para o modal de provisionamento
   const provisionamentoClose = provisionamentoModal.querySelector('.close');
   provisionamentoClose.addEventListener('click', () => {
     provisionamentoModal.classList.add('hidden');
@@ -748,40 +701,13 @@ document.addEventListener('DOMContentLoaded', () => {
   adicionarProvisionadoBtn.addEventListener('click', addProvisionado);
   limparFormBtn.addEventListener('click', limparForm);
 
-  // Event listener para remover provisionados da lista
   provisionadosContainer.addEventListener('click', (event) => {
     if (event.target.classList.contains('remover-provisionado')) {
-      const index = parseInt(event.target.getAttribute('data-index'));
-      removeProvisionado(index);
+      const id = parseInt(event.target.getAttribute('data-id'));
+      removeProvisionado(id);
     }
   });
 
-  // Event listener para remover provisionados da tabela
-  dashboardContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('remover-provisionado')) {
-      const index = parseInt(event.target.getAttribute('data-index'));
-      removeProvisionado(index);
-    }
-  });
-
-  // Modificar o fetchStock para atualizar o select quando os dados forem carregados
-  const originalFetchStock = fetchStock;
-  fetchStock = async () => {
-    await originalFetchStock();
-    populateProdutoSelect();
-  };
-
-  // Modificar o renderDashboard para usar filtros quando aplicável
-  const originalRenderDashboard = renderDashboard;
-  renderDashboard = () => {
-    if (searchInput.value || filterSelect.value !== 'all') {
-      applyFilters();
-    } else {
-      originalRenderDashboard();
-    }
-  };
-
-  // Carregar dados automaticamente ao iniciar a página
   console.log('Carregando dados iniciais do estoque...');
   fetchStock();
 });
