@@ -713,13 +713,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Garantir que os dados sejam carregados automaticamente ao iniciar
-  setTimeout(() => {
-    if (stockData.length === 0) {
-      console.log('Carregando dados iniciais...');
-      fetchStock();
-    }
-  }, 500);
-
+  // Carregar dados automaticamente ao iniciar a página
+  console.log('Carregando dados iniciais do estoque...');
   fetchStock();
 });
