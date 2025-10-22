@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <td>${item.produto}</td>
             <td>${item.quantidade}</td>
             <td>${item.tecnico}</td>
-            <td>${new Date(item.data_prevista).toLocaleDateString()}</td>
+            <td>${new Date(item.data_prevista).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}</td>
             <td>${item.observacoes || '-'}</td>
             <td>
               <button class="remover-provisionado" data-id="${item.id}">Remover</button>
@@ -645,7 +645,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <strong>Técnico:</strong> ${item.tecnico}
           </div>
           <div class="provisionado-detalhe">
-            <strong>Data:</strong> ${new Date(item.data_prevista).toLocaleDateString()}
+            <strong>Data:</strong> ${new Date(item.data_prevista).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}
           </div>
           ${item.observacoes ? `
           <div class="provisionado-detalhe">
