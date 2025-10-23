@@ -308,237 +308,6 @@
     "responsavel": ""
   },
   {
-    "id": 45,
-    "produto": "LED 40 W",
-    "quantidade": 35,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 46,
-    "produto": "LED 52 W",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 47,
-    "produto": "LED 105 W",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 48,
-    "produto": "LED 114 W",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 49,
-    "produto": "LED 136 W",
-    "quantidade": 78,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 50,
-    "produto": "LED 150 W",
-    "quantidade": 476,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 51,
-    "produto": "LED 169 W",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 52,
-    "produto": "LED 185 W",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 53,
-    "produto": "NOX",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 54,
-    "produto": "Poste Metálico 7,50 m",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 55,
-    "produto": "Poste Concreto 7,50 m",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 56,
-    "produto": "Poste Metálico 12,00 m",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 57,
-    "produto": "Poste Concreto 12,00 m",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 58,
-    "produto": "Poste Metálico CL170",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 59,
-    "produto": "Poste Metálico c/ Suporte Curvo 12,00 m",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 60,
-    "produto": "Poste de Fibra",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 61,
-    "produto": "Poste base OAE 12,00 m",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 62,
-    "produto": "Pose OAE lateral 12,00 m",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 63,
-    "produto": "Cabo PP",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 64,
-    "produto": "Cabo 3X16mm",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 65,
-    "produto": "Cabo Triplex 10mm",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 66,
-    "produto": "Cabo Triplex 50mm",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 67,
-    "produto": "Cabo Triplex 70mm",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 68,
-    "produto": "Cabo Triplex 95mm",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 69,
-    "produto": "Suporte duplo para luminária - E",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 70,
-    "produto": "Suporte unitário para luminária - E",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 71,
-    "produto": "Suporte unitário para luminária - Poste Freeflow 300 dan",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 72,
-    "produto": "Suporte duplo para luminária - Poste Freeflow 600 dan",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 73,
-    "produto": "Chapa de fechamento de barreira",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 74,
-    "produto": "Suporte duplo para luminária - Poste de fibra",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 75,
-    "produto": "Suporte duplo para luminária - Poste metálico",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 76,
-    "produto": "Suporte unitário para luminária",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
-    "id": 77,
-    "produto": "Prolongador de Luminária",
-    "quantidade": 0,
-    "local": "Container Azul BSO SJC",
-    "responsavel": ""
-  },
-  {
     "id": 78,
     "produto": "LED 40 W",
     "quantidade": 0,
@@ -1001,13 +770,6 @@
     "responsavel": ""
   },
   {
-    "id": 144,
-    "produto": "Poste metalico engastado 7 metros",
-    "quantidade": 67,
-    "local": "Base Roseira",
-    "responsavel": ""
-  },
-  {
     "id": 145,
     "produto": "Poste metalico engastado 7 metros",
     "quantidade": 934,
@@ -1025,140 +787,70 @@
     "id": 147,
     "produto": "Luminarias 105W",
     "quantidade": 518,
-    "local": "Base SJC Conteiners",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
     "id": 148,
     "produto": "Nox",
     "quantidade": 105,
-    "local": "Base SJC Conteiners",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
     "id": 149,
     "produto": "Refletores 40W (caixas com 2 und)",
     "quantidade": 29,
-    "local": "Base SJC Conteiners",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
     "id": 150,
     "produto": "Luminarias 136W",
     "quantidade": 78,
-    "local": "Base SJC Conteiners",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
     "id": 151,
     "produto": "Luminarias 150W",
     "quantidade": 387,
-    "local": "Base SJC Conteiners",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
     "id": 152,
     "produto": "Anguladores para Luminaria",
     "quantidade": 165,
-    "local": "Base SJC Conteiners",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
     "id": 153,
     "produto": "Luminarias 52W",
     "quantidade": 40,
-    "local": "Base SJC Conteiners",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
     "id": 154,
     "produto": "Luminarias 169W",
     "quantidade": 2,
-    "local": "Base SJC Conteiners",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
     "id": 155,
     "produto": "Luminarias 185W",
     "quantidade": 4,
-    "local": "Base SJC Conteiners",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
     "id": 156,
     "produto": "Shorting caps (caixas com 10 unid)",
     "quantidade": 200,
-    "local": "Base SJC Conteiners",
-    "responsavel": ""
-  },
-  {
-    "id": 157,
-    "produto": "Poste metálico engastado - 12 mts",
-    "quantidade": 364,
-    "local": "Base SJC / Canteiro Kodak",
-    "responsavel": ""
-  },
-  {
-    "id": 158,
-    "produto": "Poste de fibra para barreira",
-    "quantidade": 2,
-    "local": "Base SJC / Canteiro Kodak",
-    "responsavel": ""
-  },
-  {
-    "id": 159,
-    "produto": "Suporte duplo para poste engastado",
-    "quantidade": 55,
-    "local": "Base SJC / Canteiro Kodak",
-    "responsavel": ""
-  },
-  {
-    "id": 160,
-    "produto": "Suporte unitario para poste engastado",
-    "quantidade": 262,
-    "local": "Base SJC / Canteiro Kodak",
-    "responsavel": ""
-  },
-  {
-    "id": 161,
-    "produto": "Poste metálico 400 dan travessia - 14 metros",
-    "quantidade": 8,
-    "local": "Base SJC / Canteiro Unip",
-    "responsavel": ""
-  },
-  {
-    "id": 162,
-    "produto": "Postes metalicos 12 metros",
-    "quantidade": 55,
-    "local": "Base SJC / Canteiro Unip",
-    "responsavel": ""
-  },
-  {
-    "id": 163,
-    "produto": "Poste de fibra para barreira",
-    "quantidade": 1,
-    "local": "Base SJC / Canteiro Unip",
-    "responsavel": ""
-  },
-  {
-    "id": 164,
-    "produto": "Suporte duplo para poste de fibra",
-    "quantidade": 1,
-    "local": "Base SJC / Canteiro Unip",
-    "responsavel": ""
-  },
-  {
-    "id": 165,
-    "produto": "Suporte duplo para poste engastado",
-    "quantidade": 141,
-    "local": "Base SJC / Canteiro Unip",
-    "responsavel": ""
-  },
-  {
-    "id": 166,
-    "produto": "Suporte unitario para poste engastado",
-    "quantidade": 0,
-    "local": "Base SJC / Canteiro Unip",
+    "local": "BASE ITAIAIA",
     "responsavel": ""
   },
   {
@@ -1172,63 +864,21 @@
     "id": 168,
     "produto": "Poste metalico engastado 7 metros",
     "quantidade": 40,
-    "local": "Base Angra dos Reis",
+    "local": "BASE DNIT",
     "responsavel": ""
   },
   {
     "id": 169,
     "produto": "Poste metalico engastado 12 metros",
     "quantidade": 13,
-    "local": "Base Angra dos Reis",
+    "local": "BASE DNIT",
     "responsavel": ""
   },
   {
     "id": 170,
     "produto": "Cabo PP 6mm",
     "quantidade": 600,
-    "local": "Base Angra dos Reis",
-    "responsavel": ""
-  },
-  {
-    "id": 171,
-    "produto": "Poste OAE Lateral",
-    "quantidade": 76,
-    "local": "Base Sakamoto",
-    "responsavel": ""
-  },
-  {
-    "id": 172,
-    "produto": "Poste OAE com base",
-    "quantidade": 13,
-    "local": "Base Sakamoto",
-    "responsavel": ""
-  },
-  {
-    "id": 173,
-    "produto": "Poste engastado",
-    "quantidade": 292,
-    "local": "Base Sakamoto",
-    "responsavel": ""
-  },
-  {
-    "id": 174,
-    "produto": "Suporte unitário para poste engastado",
-    "quantidade": 18,
-    "local": "Base Sakamoto",
-    "responsavel": ""
-  },
-  {
-    "id": 175,
-    "produto": "Chapa lateral",
-    "quantidade": 424,
-    "local": "Base Sakamoto",
-    "responsavel": ""
-  },
-  {
-    "id": 176,
-    "produto": "Suporte duplo para poste de fibra",
-    "quantidade": 16,
-    "local": "Base Sakamoto",
+    "local": "BASE DNIT",
     "responsavel": ""
   },
   {
@@ -1236,202 +886,6 @@
     "produto": "Caixas de nox com 30 unidades",
     "quantidade": 121,
     "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 178,
-    "produto": "Poste engastado",
-    "quantidade": 249,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 179,
-    "produto": "Poste OAE com base",
-    "quantidade": 5,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 180,
-    "produto": "Suporte duplo para poste engastado",
-    "quantidade": 185,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 181,
-    "produto": "Suporte unitário para poste engastado",
-    "quantidade": 101,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 182,
-    "produto": "Poste de 7 metros para expensão de rede",
-    "quantidade": 454,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 183,
-    "produto": "Poste CL 170",
-    "quantidade": 100,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 184,
-    "produto": "Poste OAE com base",
-    "quantidade": 3,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 185,
-    "produto": "Suporte unitario para poste 300 dan Freeflow",
-    "quantidade": 42,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 186,
-    "produto": "Poste 18 metros engastado",
-    "quantidade": 32,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 187,
-    "produto": "Suporte duplo para poste 600 dan freeflow",
-    "quantidade": 12,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 188,
-    "produto": "Poste OAE lateral",
-    "quantidade": 53,
-    "local": "Base Fernão Dias",
-    "responsavel": ""
-  },
-  {
-    "id": 189,
-    "produto": "Caixas de nox com 30 unidades",
-    "quantidade": 26,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 190,
-    "produto": "Luminárias 150 W",
-    "quantidade": 62,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 191,
-    "produto": "Caixa de refletores 40W (caixas com 2 unidades)",
-    "quantidade": 29,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 192,
-    "produto": "Luminarias 136W",
-    "quantidade": 265,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 193,
-    "produto": "Luminarias 105W",
-    "quantidade": 76,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 194,
-    "produto": "Chapa Lateral",
-    "quantidade": 54,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 195,
-    "produto": "Luminarias 185W",
-    "quantidade": 5,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 196,
-    "produto": "Suporte de passarela (topo)",
-    "quantidade": 44,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 197,
-    "produto": "Suporte de passarela (meio do poste)",
-    "quantidade": 38,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 198,
-    "produto": "Poste 300 dan Freeflow",
-    "quantidade": 58,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 199,
-    "produto": "Poste de fibra  para barreira",
-    "quantidade": 9,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 200,
-    "produto": "Poste de barreira 300 dan - Freeflow",
-    "quantidade": 10,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 201,
-    "produto": "Poste Oae com base",
-    "quantidade": 3,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 202,
-    "produto": "Suporte unitario para poste engastado",
-    "quantidade": 40,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 203,
-    "produto": "Suporte duplo para poste engastado",
-    "quantidade": 72,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 204,
-    "produto": "Suporte unitário para poste 600 dan freeflow",
-    "quantidade": 15,
-    "local": "Base Vila Maria",
-    "responsavel": ""
-  },
-  {
-    "id": 205,
-    "produto": "Suporte unitario para poste 300 dan freeflow",
-    "quantidade": 10,
-    "local": "Base Vila Maria",
     "responsavel": ""
   }
 ]

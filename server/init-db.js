@@ -18,7 +18,6 @@ const initDatabase = async () => {
   const client = await pool.connect();
   try {
     await client.query('DROP TABLE IF EXISTS stock;');
-    await client.query('DROP TABLE IF EXISTS provisioning;');
 
     // Create table
     await client.query(`
@@ -28,17 +27,6 @@ const initDatabase = async () => {
         quantidade INTEGER NOT NULL,
         local VARCHAR(255) NOT NULL,
         responsavel VARCHAR(255)
-      );
-    `);
-
-    await client.query(`
-      CREATE TABLE provisioning (
-        id SERIAL PRIMARY KEY,
-        produto VARCHAR(255) NOT NULL,
-        quantidade INTEGER NOT NULL,
-        tecnico VARCHAR(255) NOT NULL,
-        data_prevista DATE NOT NULL,
-        observacoes TEXT
       );
     `);
 
