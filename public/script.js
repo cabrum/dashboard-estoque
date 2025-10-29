@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentLocation = 'Estoque Geral'; // Default location
   let filteredData = [];
   let provisionadosData = []; // Array para armazenar provisionamentos
+  let logsData = []; // Array para armazenar logs
 
   const fetchStock = async () => {
     try {
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       stockData = await response.json();
       await fetchProvisioning(); // Fetch provisioning data after stock data
+      await fetchLogs(); // Fetch logs data
       populateProdutoSelect();
       renderDashboard();
     } catch (error) {
@@ -50,6 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
       provisionadosData = await response.json();
     } catch (error) {
       console.error('Erro ao buscar dados de provisionamento:', error);
+    }
+  };
+
+  const fetchLogs = async () => {
+    try {
+      const response = await fetch('/api/logs');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      logsData = await response.json();
+    } catch (error) {
+      console.error('Erro ao buscar dados de logs:', error);
     }
   };
 
@@ -79,6 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
         itemsForCurrentLocation = Object.values(aggregatedStock);
       } else if (currentLocation === 'Provisionado') {
         renderProvisionadosDashboard();
+        return;
+      } else if (currentLocation === 'Logs') {
+        renderLogsDashboard();
         return;
       } else {
         const groupedByLocation = stockData.reduce((acc, item) => {
@@ -187,6 +204,50 @@ document.addEventListener('DOMContentLoaded', () => {
     dashboardContainer.appendChild(card);
   };
 
+  const renderLogsDashboard = () => {
+    dashboardContainer.innerHTML = '';
+
+    if (logsData.length === 0) {
+      dashboardContainer.innerHTML = '<p>Nenhum log encontrado.</p>';
+      return;
+    }
+
+    const card = document.createElement('div');
+    card.className = 'location-card';
+
+    const title = document.createElement('h2');
+    title.textContent = 'Histórico de Logs';
+    card.appendChild(title);
+
+    const table = document.createElement('table');
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th>Data/Hora</th>
+          <th>Produto</th>
+          <th>Tipo</th>
+          <th>Quantidade Alterada</th>
+          <th>Responsável</th>
+          <th>Local</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${logsData.map(item => `
+          <tr>
+            <td>${new Date(item.data_hora).toLocaleString()}</td>
+            <td>${item.produto}</td>
+            <td>${item.tipo}</td>
+            <td>${item.quantidade_alterada}</td>
+            <td>${item.responsavel || '-'}</td>
+            <td>${item.local}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    `;
+    card.appendChild(table);
+    dashboardContainer.appendChild(card);
+  };
+
   const getProvisionadoByProduto = (produto) => {
     return provisionadosData.find(item => item.produto === produto);
   };
@@ -238,18 +299,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  locationNav.addEventListener('click', (event) => {
+  locationNav.addEventListener('click', async (event) => {
     const target = event.target;
     if (target.tagName === 'BUTTON') {
       currentLocation = target.getAttribute('data-location');
-      
+
       document.querySelectorAll('.location-button').forEach(btn => btn.classList.remove('active'));
       target.classList.add('active');
-      
+
       if (currentLocation === 'Provisionado') {
         populateProdutoSelect();
       }
-      
+
+      if (currentLocation === 'Logs') {
+        await fetchLogs();
+      }
+
       renderDashboard();
     }
   });
