@@ -81,16 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let itemsForCurrentLocation;
 
       if (currentLocation === 'Estoque Geral') {
-        const aggregatedStock = {};
-        stockData.forEach(item => {
-          if (item.local !== 'Estoque Geral') {
-            if (!aggregatedStock[item.produto]) {
-              aggregatedStock[item.produto] = { ...item, quantidade: 0, responsavel: '' };
-            }
-            aggregatedStock[item.produto].quantidade += item.quantidade;
-          }
-        });
-        itemsForCurrentLocation = Object.values(aggregatedStock);
+        itemsForCurrentLocation = stockData.filter(item => item.local === 'Estoque Geral');
       } else if (currentLocation === 'Provisionado') {
         renderProvisionadosDashboard();
         return;
@@ -382,16 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentLocation !== 'Estoque Geral') {
       dataToFilter = dataToFilter.filter(item => item.local === currentLocation);
     } else {
-      const aggregatedStock = {};
-      dataToFilter.forEach(item => {
-        if (item.local !== 'Estoque Geral') {
-          if (!aggregatedStock[item.produto]) {
-            aggregatedStock[item.produto] = { ...item, quantidade: 0, responsavel: '' };
-          }
-          aggregatedStock[item.produto].quantidade += item.quantidade;
-        }
-      });
-      dataToFilter = Object.values(aggregatedStock);
+      dataToFilter = dataToFilter.filter(item => item.local === 'Estoque Geral');
     }
 
     if (searchTerm) {
