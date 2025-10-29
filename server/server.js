@@ -7,6 +7,74 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+const initDatabaseIfNeeded = async () => {
+  const client = await pool.connect();
+  try {
+    // Try to select from stock
+    const result = await client.query('SELECT COUNT(*) as count FROM stock');
+    if (parseInt(result.rows[0].count) === 0) {
+      console.log('Stock table is empty, initializing...');
+      await initializeDatabase(client);
+    }
+  } catch (err) {
+    console.log('Stock table does not exist or error, initializing database...');
+    await initializeDatabase(client);
+  } finally {
+    client.release();
+  }
+};
+
+const initializeDatabase = async (client) => {
+  const fs = require('fs');
+  const path = require('path');
+  const dataPath = path.join(__dirname, 'data.json');
+  const stockData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+  try {
+    await client.query('DROP TABLE IF EXISTS logs');
+    await client.query('DROP TABLE IF EXISTS provisioning');
+    await client.query('DROP TABLE IF EXISTS stock');
+    await client.query(`
+      CREATE TABLE stock (
+        id SERIAL PRIMARY KEY,
+        produto VARCHAR(255) NOT NULL,
+        quantidade INTEGER NOT NULL,
+        local VARCHAR(255) NOT NULL,
+        responsavel VARCHAR(255)
+      );
+    `);
+    await client.query(`
+      CREATE TABLE provisioning (
+        id SERIAL PRIMARY KEY,
+        produto VARCHAR(255) NOT NULL,
+        quantidade INTEGER NOT NULL,
+        tecnico VARCHAR(255) NOT NULL,
+        data_prevista DATE NOT NULL,
+        observacoes TEXT
+      );
+    `);
+    await client.query(`
+      CREATE TABLE logs (
+        id SERIAL PRIMARY KEY,
+        produto VARCHAR(255) NOT NULL,
+        quantidade_alterada INTEGER NOT NULL,
+        tipo VARCHAR(50) NOT NULL,
+        responsavel VARCHAR(255),
+        data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        local VARCHAR(255)
+      );
+    `);
+    for (const item of stockData) {
+      await client.query(
+        'INSERT INTO stock (id, produto, quantidade, local, responsavel) VALUES ($1, $2, $3, $4, $5)',
+        [item.id, item.produto, item.quantidade, item.local, item.responsavel]
+      );
+    }
+    console.log('Database initialized successfully.');
+  } catch (err) {
+    console.error('Error initializing database:', err);
+  }
+};
+
 // Rota para obter os dados do estoque
 app.get('/api/stock', async (req, res) => {
   console.log('Request received for /api/stock');
@@ -118,6 +186,7 @@ app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`Server running on port ${PORT}`);
+  await initDatabaseIfNeeded();
 });
