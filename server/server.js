@@ -46,6 +46,43 @@ app.put('/api/stock', async (req, res) => {
   }
 });
 
+
+// Rotas para provisionamento
+app.get('/api/provisioning', async (req, res) => {
+  try {
+    const { rows } = await pool.query('SELECT * FROM provisioning ORDER BY id ASC');
+    res.json(rows);
+  } catch (err) {
+    console.error('ERROR FETCHING PROVISIONING DATA:', err);
+    res.status(500).send('Error reading provisioning data.');
+  }
+});
+
+app.post('/api/provisioning', async (req, res) => {
+  const { produto, quantidade, tecnico, data_prevista, observacoes } = req.body;
+  try {
+    const { rows } = await pool.query(
+      'INSERT INTO provisioning (produto, quantidade, tecnico, data_prevista, observacoes) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [produto, quantidade, tecnico, data_prevista, observacoes]
+    );
+    res.status(201).json(rows[0]);
+  } catch (err) {
+    console.error('ERROR INSERTING PROVISIONING DATA:', err);
+    res.status(500).send('Error saving provisioning data.');
+  }
+});
+
+app.delete('/api/provisioning/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    await pool.query('DELETE FROM provisioning WHERE id = $1', [id]);
+    res.send('Provisioning item deleted successfully!');
+  } catch (err) {
+    console.error('ERROR DELETING PROVISIONING DATA:', err);
+    res.status(500).send('Error deleting provisioning data.');
+  }
+});
+
 // Servir arquivos estáticos da pasta 'public'
 app.use(express.static(path.join(__dirname, '../public')));
 
