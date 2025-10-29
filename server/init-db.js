@@ -42,6 +42,18 @@ const initDatabase = async () => {
       );
     `);
 
+    await client.query(`
+      CREATE TABLE logs (
+        id SERIAL PRIMARY KEY,
+        produto VARCHAR(255) NOT NULL,
+        quantidade_alterada INTEGER NOT NULL,
+        tipo VARCHAR(50) NOT NULL,
+        responsavel VARCHAR(255),
+        data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        local VARCHAR(255)
+      );
+    `);
+
     // Insert data
     for (const item of stockData) {
       await client.query(

@@ -28,7 +28,23 @@ app.put('/api/stock', async (req, res) => {
   try {
     await client.query('BEGIN'); // Start transaction
 
+    // Buscar estoque atual para comparar
+    const { rows: currentStock } = await client.query('SELECT id, quantidade, responsavel, produto, local FROM stock');
+    const currentStockMap = new Map(currentStock.map(item => [item.id, item]));
+
     for (const item of newStock) {
+      const oldItem = currentStockMap.get(item.id);
+      if (oldItem) {
+        const quantidadeDiff = item.quantidade - oldItem.quantidade;
+        if (quantidadeDiff !== 0) {
+          const tipo = quantidadeDiff > 0 ? 'adição' : 'retirada';
+          await client.query(
+            'INSERT INTO logs (produto, quantidade_alterada, tipo, responsavel, local) VALUES ($1, $2, $3, $4, $5)',
+            [item.produto, Math.abs(quantidadeDiff), tipo, item.responsavel || oldItem.responsavel, item.local]
+          );
+        }
+      }
+
       await client.query(
         'UPDATE stock SET quantidade = $1, responsavel = $2 WHERE id = $3',
         [item.quantidade, item.responsavel, item.id]
@@ -80,6 +96,17 @@ app.delete('/api/provisioning/:id', async (req, res) => {
   } catch (err) {
     console.error('ERROR DELETING PROVISIONING DATA:', err);
     res.status(500).send('Error deleting provisioning data.');
+  }
+});
+
+// Rota para obter os logs
+app.get('/api/logs', async (req, res) => {
+  try {
+    const { rows } = await pool.query('SELECT * FROM logs ORDER BY data_hora DESC');
+    res.json(rows);
+  } catch (err) {
+    console.error('ERROR FETCHING LOGS:', err);
+    res.status(500).send('Error reading logs data.');
   }
 });
 
