@@ -127,127 +127,393 @@
   },
   {
     "id": 19,
+    "produto": "cabo triplex 95mm",
+    "quantidade": 400,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 20,
+    "produto": "cabo triplex 70mm",
+    "quantidade": 200,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 21,
+    "produto": "cabo triplex 50mm",
+    "quantidade": 200,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 22,
+    "produto": "postes metálicos cl170",
+    "quantidade": 60,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 23,
+    "produto": "postes metálicos 7,5 ",
+    "quantidade": 477,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 24,
+    "produto": "postes 18 ",
+    "quantidade": 31,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 25,
+    "produto": "postes oae lateral",
+    "quantidade": 126,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 26,
+    "produto": "braços duplo para poste de engastado",
+    "quantidade": 38,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 27,
+    "produto": "braços duplo para poste de 600dan",
+    "quantidade": 11,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 28,
+    "produto": "braços duplo para poste de 300 dan",
+    "quantidade": 23,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 29,
+    "produto": "braços unitário para poste 300 dan",
+    "quantidade": 35,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 30,
+    "produto": "braços duplo para poste engastado",
+    "quantidade": 49,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 31,
+    "produto": "braços de poste unitário para poste engastado",
+    "quantidade": 2,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 32,
+    "produto": "poste de fibra",
+    "quantidade": 2,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 33,
+    "produto": "postes engastados",
+    "quantidade": 297,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 34,
+    "produto": "chapas laterais",
+    "quantidade": 404,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 35,
+    "produto": "postes em barreira",
+    "quantidade": 58,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 36,
+    "produto": "braços simples",
+    "quantidade": 56,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 37,
+    "produto": "braços duplos",
+    "quantidade": 174,
+    "local": "Base Pindamonhangaba",
+    "responsavel": ""
+  },
+  {
+    "id": 38,
     "produto": "Led 150w",
     "quantidade": 75,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 20,
+    "id": 39,
     "produto": "Led 136W",
     "quantidade": 78,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 21,
+    "id": 40,
     "produto": "Led 105W",
     "quantidade": 155,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 22,
+    "id": 41,
     "produto": "Led 52W",
     "quantidade": 40,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 23,
+    "id": 42,
     "produto": "Led 40W",
     "quantidade": 29,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 24,
+    "id": 43,
     "produto": "NOX (unidade)",
     "quantidade": 3390,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 25,
+    "id": 44,
     "produto": "Caixa de medição",
     "quantidade": 17,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 26,
+    "id": 45,
     "produto": "Cabo 25mm quadriplex",
     "quantidade": 1000,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 27,
+    "id": 46,
     "produto": "Cabo 16mm triplex",
     "quantidade": 1800,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 28,
+    "id": 47,
     "produto": "Cabo 10mm triplex",
     "quantidade": 60,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 29,
+    "id": 48,
     "produto": "Cabo PP 3x1,5mm",
     "quantidade": 1500,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 30,
+    "id": 49,
     "produto": "Cabo de cobre 70mm",
     "quantidade": 200,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 31,
+    "id": 50,
     "produto": "Shorting Cap",
     "quantidade": 100,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 32,
+    "id": 51,
     "produto": "Kit montagem luminárias",
     "quantidade": 153,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 33,
+    "id": 52,
     "produto": "Chumbador químico",
     "quantidade": 348,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 34,
+    "id": 53,
     "produto": "Chumbador de ancoragem",
     "quantidade": 420,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 35,
+    "id": 54,
     "produto": "Estojo de fixação",
     "quantidade": 480,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
-    "id": 36,
+    "id": 55,
     "produto": "Porcas",
     "quantidade": 600,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 56,
+    "produto": "cabo triplex 95mm",
+    "quantidade": 400,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 57,
+    "produto": "cabo triplex 70mm",
+    "quantidade": 200,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 58,
+    "produto": "cabo triplex 50mm",
+    "quantidade": 200,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 59,
+    "produto": "postes metálicos cl170",
+    "quantidade": 60,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 60,
+    "produto": "postes metálicos 7,5 ",
+    "quantidade": 477,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 61,
+    "produto": "postes 18 ",
+    "quantidade": 31,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 62,
+    "produto": "postes oae lateral",
+    "quantidade": 126,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 63,
+    "produto": "braços duplo para poste de engastado",
+    "quantidade": 38,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 64,
+    "produto": "braços duplo para poste de 600dan",
+    "quantidade": 11,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 65,
+    "produto": "braços duplo para poste de 300 dan",
+    "quantidade": 23,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 66,
+    "produto": "braços unitário para poste 300 dan",
+    "quantidade": 35,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 67,
+    "produto": "braços duplo para poste engastado",
+    "quantidade": 49,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 68,
+    "produto": "braços de poste unitário para poste engastado",
+    "quantidade": 2,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 69,
+    "produto": "poste de fibra",
+    "quantidade": 2,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 70,
+    "produto": "postes engastados",
+    "quantidade": 297,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 71,
+    "produto": "chapas laterais",
+    "quantidade": 404,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 72,
+    "produto": "postes em barreira",
+    "quantidade": 58,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 73,
+    "produto": "braços simples",
+    "quantidade": 56,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 74,
+    "produto": "braços duplos",
+    "quantidade": 174,
     "local": "Estoque Geral",
     "responsavel": ""
   }
