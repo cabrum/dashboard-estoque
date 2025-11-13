@@ -1,1213 +1,254 @@
 [
   {
     "id": 1,
-    "produto": "LED 40 W",
-    "quantidade": 35,
-    "local": "Estoque Geral",
+    "produto": "Led 150w",
+    "quantidade": 75,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 2,
-    "produto": "LED 52 W",
-    "quantidade": 46,
-    "local": "Estoque Geral",
+    "produto": "Led 136W",
+    "quantidade": 78,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 3,
-    "produto": "LED 105 W",
-    "quantidade": 1201,
-    "local": "Estoque Geral",
+    "produto": "Led 105W",
+    "quantidade": 155,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 4,
-    "produto": "LED 114 W",
-    "quantidade": 173,
-    "local": "Estoque Geral",
+    "produto": "Led 52W",
+    "quantidade": 40,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 5,
-    "produto": "LED 136 W",
-    "quantidade": 682,
-    "local": "Estoque Geral",
+    "produto": "Led 40W",
+    "quantidade": 29,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 6,
-    "produto": "LED 150 W",
-    "quantidade": 1002,
-    "local": "Estoque Geral",
+    "produto": "NOX (unidade)",
+    "quantidade": 3390,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 7,
-    "produto": "LED 169 W",
-    "quantidade": 4,
-    "local": "Estoque Geral",
+    "produto": "Caixa de medição",
+    "quantidade": 17,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 8,
-    "produto": "LED 185 W",
-    "quantidade": 52,
-    "local": "Estoque Geral",
+    "produto": "Cabo 25mm quadriplex",
+    "quantidade": 1000,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 9,
-    "produto": "NOX",
-    "quantidade": 9471,
-    "local": "Estoque Geral",
+    "produto": "Cabo 16mm triplex",
+    "quantidade": 1800,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 10,
-    "produto": "Poste Metálico 7,50 m",
-    "quantidade": 3819,
-    "local": "Estoque Geral",
+    "produto": "Cabo 10mm triplex",
+    "quantidade": 60,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 11,
-    "produto": "Poste Concreto 7,50 m",
-    "quantidade": 68,
-    "local": "Estoque Geral",
+    "produto": "Cabo PP 3x1,5mm",
+    "quantidade": 1500,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 12,
-    "produto": "Poste Metálico 12,00 m",
-    "quantidade": 1242,
-    "local": "Estoque Geral",
+    "produto": "Cabo de cobre 70mm",
+    "quantidade": 200,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 13,
-    "produto": "Poste Concreto 12,00 m",
-    "quantidade": 6,
-    "local": "Estoque Geral",
+    "produto": "Shorting Cap",
+    "quantidade": 100,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 14,
-    "produto": "Poste Metálico CL170",
-    "quantidade": 163,
-    "local": "Estoque Geral",
+    "produto": "Kit montagem luminárias",
+    "quantidade": 153,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 15,
-    "produto": "Poste Metálico c/ Suporte Curvo 12,00 m",
-    "quantidade": 0,
-    "local": "Estoque Geral",
+    "produto": "Chumbador químico",
+    "quantidade": 348,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 16,
-    "produto": "Poste de Fibra",
-    "quantidade": 92,
-    "local": "Estoque Geral",
+    "produto": "Chumbador de ancoragem",
+    "quantidade": 420,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 17,
-    "produto": "Poste base OAE 12,00 m",
-    "quantidade": 105,
-    "local": "Estoque Geral",
+    "produto": "Estojo de fixação",
+    "quantidade": 480,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 18,
-    "produto": "Pose OAE lateral 12,00 m",
-    "quantidade": 283,
-    "local": "Estoque Geral",
+    "produto": "Porcas",
+    "quantidade": 600,
+    "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 19,
-    "produto": "Cabo PP",
-    "quantidade": 600,
+    "produto": "Led 150w",
+    "quantidade": 75,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 20,
-    "produto": "Cabo 3X16mm",
-    "quantidade": 3000,
+    "produto": "Led 136W",
+    "quantidade": 78,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 21,
-    "produto": "Cabo Triplex 10mm",
-    "quantidade": 4200,
+    "produto": "Led 105W",
+    "quantidade": 155,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 22,
-    "produto": "Cabo Triplex 50mm",
-    "quantidade": 0,
+    "produto": "Led 52W",
+    "quantidade": 40,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 23,
-    "produto": "Cabo Triplex 70mm",
-    "quantidade": 0,
+    "produto": "Led 40W",
+    "quantidade": 29,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 24,
-    "produto": "Cabo Triplex 95mm",
-    "quantidade": 0,
+    "produto": "NOX (unidade)",
+    "quantidade": 3390,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 25,
-    "produto": "Suporte duplo para luminária - E",
-    "quantidade": 50,
+    "produto": "Caixa de medição",
+    "quantidade": 17,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 26,
-    "produto": "Suporte unitário para luminária - E",
-    "quantidade": 48,
+    "produto": "Cabo 25mm quadriplex",
+    "quantidade": 1000,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 27,
-    "produto": "Suporte unitário para luminária - Poste Freeflow 300 dan",
-    "quantidade": 3052,
+    "produto": "Cabo 16mm triplex",
+    "quantidade": 1800,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 28,
-    "produto": "Suporte duplo para luminária - Poste Freeflow 600 dan",
-    "quantidade": 27,
+    "produto": "Cabo 10mm triplex",
+    "quantidade": 60,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 29,
-    "produto": "Chapa de fechamento de barreira",
-    "quantidade": 1219,
+    "produto": "Cabo PP 3x1,5mm",
+    "quantidade": 1500,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 30,
-    "produto": "Suporte duplo para luminária - Poste de fibra",
-    "quantidade": 33,
+    "produto": "Cabo de cobre 70mm",
+    "quantidade": 200,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 31,
-    "produto": "Suporte duplo para luminária - Poste metálico",
-    "quantidade": 321,
+    "produto": "Shorting Cap",
+    "quantidade": 100,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 32,
-    "produto": "Suporte unitário para luminária",
-    "quantidade": 443,
+    "produto": "Kit montagem luminárias",
+    "quantidade": 153,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 33,
-    "produto": "Prolongador de Luminária",
-    "quantidade": 0,
+    "produto": "Chumbador químico",
+    "quantidade": 348,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 34,
-    "produto": "Refletores 40W (caixas com 2 und)",
-    "quantidade": 58,
+    "produto": "Chumbador de ancoragem",
+    "quantidade": 420,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 35,
-    "produto": "Anguladores para Luminaria",
-    "quantidade": 165,
+    "produto": "Estojo de fixação",
+    "quantidade": 480,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 36,
-    "produto": "Shorting caps (caixas com 10 unid)",
-    "quantidade": 200,
-    "local": "Estoque Geral",
-    "responsavel": ""
-  },
-  {
-    "id": 37,
-    "produto": "Poste metálico 400 dan travessia - 14 metros",
-    "quantidade": 8,
-    "local": "Estoque Geral",
-    "responsavel": ""
-  },
-  {
-    "id": 38,
-    "produto": "Poste de 7 metros para expensão de rede",
-    "quantidade": 454,
-    "local": "Estoque Geral",
-    "responsavel": ""
-  },
-  {
-    "id": 39,
-    "produto": "Poste 18 metros engastado",
-    "quantidade": 32,
-    "local": "Estoque Geral",
-    "responsavel": ""
-  },
-  {
-    "id": 40,
-    "produto": "Suporte de passarela (topo)",
-    "quantidade": 44,
-    "local": "Estoque Geral",
-    "responsavel": ""
-  },
-  {
-    "id": 41,
-    "produto": "Suporte de passarela (meio do poste)",
-    "quantidade": 38,
-    "local": "Estoque Geral",
-    "responsavel": ""
-  },
-  {
-    "id": 42,
-    "produto": "Poste 300 dan Freeflow",
-    "quantidade": 58,
-    "local": "Estoque Geral",
-    "responsavel": ""
-  },
-  {
-    "id": 43,
-    "produto": "Poste de barreira 300 dan - Freeflow",
-    "quantidade": 10,
-    "local": "Estoque Geral",
-    "responsavel": ""
-  },
-  {
-    "id": 44,
-    "produto": "Suporte unitário para poste 600 dan freeflow",
-    "quantidade": 15,
-    "local": "Estoque Geral",
-    "responsavel": ""
-  },
-  {
-    "id": 78,
-    "produto": "LED 40 W",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 79,
-    "produto": "LED 52 W",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 80,
-    "produto": "LED 105 W",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 81,
-    "produto": "LED 114 W",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 82,
-    "produto": "LED 136 W",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 83,
-    "produto": "LED 150 W",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 84,
-    "produto": "LED 169 W",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 85,
-    "produto": "LED 185 W",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 86,
-    "produto": "NOX",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 87,
-    "produto": "Poste Metálico 7,50 m",
-    "quantidade": 1086,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 88,
-    "produto": "Poste Concreto 7,50 m",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 89,
-    "produto": "Poste Metálico 12,00 m",
-    "quantidade": 159,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 90,
-    "produto": "Poste Concreto 12,00 m",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 91,
-    "produto": "Poste Metálico CL170",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 92,
-    "produto": "Poste Metálico c/ Suporte Curvo 12,00 m",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 93,
-    "produto": "Poste de Fibra",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 94,
-    "produto": "Poste base OAE 12,00 m",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 95,
-    "produto": "Pose OAE lateral 12,00 m",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 96,
-    "produto": "Cabo PP",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 97,
-    "produto": "Cabo 3X16mm",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 98,
-    "produto": "Cabo Triplex 10mm",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 99,
-    "produto": "Cabo Triplex 50mm",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 100,
-    "produto": "Cabo Triplex 70mm",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 101,
-    "produto": "Cabo Triplex 95mm",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 102,
-    "produto": "Suporte duplo para luminária - E",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 103,
-    "produto": "Suporte unitário para luminária - E",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 104,
-    "produto": "Suporte unitário para luminária - Poste Freeflow 300 dan",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 105,
-    "produto": "Suporte duplo para luminária - Poste Freeflow 600 dan",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 106,
-    "produto": "Chapa de fechamento de barreira",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 107,
-    "produto": "Suporte duplo para luminária - Poste de fibra",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 108,
-    "produto": "Suporte duplo para luminária - Poste metálico",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 109,
-    "produto": "Suporte unitário para luminária",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 110,
-    "produto": "Prolongador de Luminária",
-    "quantidade": 0,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 111,
-    "produto": "LED 40 W",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 112,
-    "produto": "LED 52 W",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 113,
-    "produto": "LED 105 W",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 114,
-    "produto": "LED 114 W",
-    "quantidade": 173,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 115,
-    "produto": "LED 136 W",
-    "quantidade": 238,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 116,
-    "produto": "LED 150 W",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 117,
-    "produto": "LED 169 W",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 118,
-    "produto": "LED 185 W",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 119,
-    "produto": "NOX",
-    "quantidade": 4500,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 120,
-    "produto": "Poste Metálico 7,50 m",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 121,
-    "produto": "Poste Concreto 7,50 m",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 122,
-    "produto": "Poste Metálico 12,00 m",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 123,
-    "produto": "Poste Concreto 12,00 m",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 124,
-    "produto": "Poste Metálico CL170",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 125,
-    "produto": "Poste Metálico c/ Suporte Curvo 12,00 m",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 126,
-    "produto": "Poste de Fibra",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 127,
-    "produto": "Poste base OAE 12,00 m",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 128,
-    "produto": "Pose OAE lateral 12,00 m",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 129,
-    "produto": "Cabo PP",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 130,
-    "produto": "Cabo 3X16mm",
-    "quantidade": 3000,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 131,
-    "produto": "Cabo Triplex 10mm",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 132,
-    "produto": "Cabo Triplex 50mm",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 133,
-    "produto": "Cabo Triplex 70mm",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 134,
-    "produto": "Cabo Triplex 95mm",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 135,
-    "produto": "Suporte duplo para luminária - E",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 136,
-    "produto": "Suporte unitário para luminária - E",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 137,
-    "produto": "Suporte unitário para luminária - Poste Freeflow 300 dan",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 138,
-    "produto": "Suporte duplo para luminária - Poste Freeflow 600 dan",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 139,
-    "produto": "Chapa de fechamento de barreira",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 140,
-    "produto": "Suporte duplo para luminária - Poste de fibra",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 141,
-    "produto": "Suporte duplo para luminária - Poste metálico",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 142,
-    "produto": "Suporte unitário para luminária",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 143,
-    "produto": "Prolongador de Luminária",
-    "quantidade": 0,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 145,
-    "produto": "Poste metalico engastado 7 metros",
-    "quantidade": 934,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 146,
-    "produto": "Postes metálicos 12 mts para travessia",
-    "quantidade": 129,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 147,
-    "produto": "Luminarias 105W",
-    "quantidade": 518,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 148,
-    "produto": "Nox",
-    "quantidade": 105,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 149,
-    "produto": "Refletores 40W (caixas com 2 und)",
-    "quantidade": 29,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 150,
-    "produto": "Luminarias 136W",
-    "quantidade": 78,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 151,
-    "produto": "Luminarias 150W",
-    "quantidade": 387,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 152,
-    "produto": "Anguladores para Luminaria",
-    "quantidade": 165,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 153,
-    "produto": "Luminarias 52W",
-    "quantidade": 40,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 154,
-    "produto": "Luminarias 169W",
-    "quantidade": 2,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 155,
-    "produto": "Luminarias 185W",
-    "quantidade": 4,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 156,
-    "produto": "Shorting caps (caixas com 10 unid)",
-    "quantidade": 200,
-    "local": "BASE ITAIAIA",
-    "responsavel": ""
-  },
-  {
-    "id": 167,
-    "produto": "Postes de concreto 7,5mts",
-    "quantidade": 34,
-    "local": "Base Ubatuba",
-    "responsavel": ""
-  },
-  {
-    "id": 168,
-    "produto": "Poste metalico engastado 7 metros",
-    "quantidade": 40,
-    "local": "BASE DNIT",
-    "responsavel": ""
-  },
-  {
-    "id": 169,
-    "produto": "Poste metalico engastado 12 metros",
-    "quantidade": 13,
-    "local": "BASE DNIT",
-    "responsavel": ""
-  },
-  {
-    "id": 170,
-    "produto": "Cabo PP 6mm",
+    "produto": "Porcas",
     "quantidade": 600,
-    "local": "BASE DNIT",
-    "responsavel": ""
-  },
-  {
-    "id": 177,
-    "produto": "Caixas de nox com 30 unidades",
-    "quantidade": 121,
-    "local": "Base Santa Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 178,
-    "produto": "luminárias 136",
-    "quantidade": 60,
-    "local": "Sta Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 179,
-    "produto": "caixas de nox",
-    "quantidade": 113,
-    "local": "Sta Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 180,
-    "produto": "caixas de medição",
-    "quantidade": 22,
-    "local": "Sta Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 181,
-    "produto": "cabo 25mm quadriplex",
-    "quantidade": 1000,
-    "local": "Sta Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 182,
-    "produto": "cabo 16mm triplex",
-    "quantidade": 1800,
-    "local": "Sta Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 183,
-    "produto": "cabo 10mm triplex",
-    "quantidade": 60,
-    "local": "Sta Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 184,
-    "produto": "cabo cobre 70mm uni",
-    "quantidade": 200,
-    "local": "Sta Isabel",
-    "responsavel": ""
-  },
-  {
-    "id": 185,
-    "produto": "postes oae lateral",
-    "quantidade": 73,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 186,
-    "produto": "poste de base metálico",
-    "quantidade": 16,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 187,
-    "produto": "Postes engasgados",
-    "quantidade": 267,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 188,
-    "produto": "braços para poste engastado",
-    "quantidade": 20,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 189,
-    "produto": "chapas laterais",
-    "quantidade": 350,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 190,
-    "produto": "postes metálicos cl170",
-    "quantidade": 60,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 191,
-    "produto": "postes metálicos 7,5 mts",
-    "quantidade": 461,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 192,
-    "produto": "postes 18 mts",
-    "quantidade": 31,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 193,
-    "produto": "postes oae lateral",
-    "quantidade": 52,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 194,
-    "produto": "duplo para poste de engastado",
-    "quantidade": 38,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 195,
-    "produto": "duplo para poste de 600dan",
-    "quantidade": 11,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 196,
-    "produto": "duplo para poste de 300 da",
-    "quantidade": 23,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 197,
-    "produto": "unitário para poste 300 dan",
-    "quantidade": 35,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 198,
-    "produto": "duplo para poste engastado",
-    "quantidade": 29,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 199,
-    "produto": "de poste unitário para poste engastado",
-    "quantidade": 2,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 200,
-    "produto": "poste de fibra",
-    "quantidade": 2,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 201,
-    "produto": "postes de engasgar",
-    "quantidade": 30,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 202,
-    "produto": "luminárias de 105w",
-    "quantidade": 15,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 203,
-    "produto": "luminárias de 136w",
-    "quantidade": 8,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 204,
-    "produto": "chapas laterais",
-    "quantidade": 54,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 205,
-    "produto": "duplo para poste engastado",
-    "quantidade": 21,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 206,
-    "produto": "postes de 300 dan",
-    "quantidade": 63,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 207,
-    "produto": "poste oae lateral",
-    "quantidade": 1,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 208,
-    "produto": "postes de barreira 300 dan",
-    "quantidade": 10,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 209,
-    "produto": "suporte duplo para poste engastado",
-    "quantidade": 66,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 210,
-    "produto": "suporte unitário para poste 600 dan",
-    "quantidade": 16,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 211,
-    "produto": "braço unitário para poste de engastar",
-    "quantidade": 7,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 212,
-    "produto": "braço unitário para poste 300 dan",
-    "quantidade": 7,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 213,
-    "produto": "caixas de refletores (com 2 PCs cada) 40w",
-    "quantidade": 4,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 214,
-    "produto": "luminárias 114w",
-    "quantidade": 3,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 215,
-    "produto": "caixas de nox (com30 cada)",
-    "quantidade": 2,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 216,
-    "produto": "suportes de luminária para passarela (topo)",
-    "quantidade": 42,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 217,
-    "produto": "suportes para luminária de passarela (meio)",
-    "quantidade": 38,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 218,
-    "produto": "caixas de medição",
-    "quantidade": 7,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 219,
-    "produto": "grades de proteção para padrão",
-    "quantidade": 8,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 220,
-    "produto": "caixas de chumbadores químicos. (Com 12 PCs)",
-    "quantidade": 13,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 221,
-    "produto": "cabo triplex 95mm",
-    "quantidade": 400,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 222,
-    "produto": "cabo triplex 70mm",
-    "quantidade": 200,
-    "local": "Base Pindamonhangaba",
-    "responsavel": ""
-  },
-  {
-    "id": 223,
-    "produto": "cabo triplex 50mm",
-    "quantidade": 200,
-    "local": "Base Pindamonhangaba",
+    "local": "Estoque Geral",
     "responsavel": ""
   }
 ]
