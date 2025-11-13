@@ -8,63 +8,63 @@
   },
   {
     "id": 2,
-    "produto": "Led 136W",
+    "produto": "Led 136w",
     "quantidade": 78,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 3,
-    "produto": "Led 105W",
+    "produto": "Led 105w",
     "quantidade": 155,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 4,
-    "produto": "Led 52W",
+    "produto": "Led 52w",
     "quantidade": 40,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 5,
-    "produto": "Led 40W",
+    "produto": "Led 40w",
     "quantidade": 29,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 6,
-    "produto": "NOX (unidade)",
+    "produto": "NOX",
     "quantidade": 3390,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 7,
-    "produto": "Caixa de medição",
+    "produto": "Caixa De Medição",
     "quantidade": 17,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 8,
-    "produto": "Cabo 25mm quadriplex",
+    "produto": "Cabo 25mm Quadriplex",
     "quantidade": 1000,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 9,
-    "produto": "Cabo 16mm triplex",
+    "produto": "Cabo 16mm Triplex",
     "quantidade": 1800,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 10,
-    "produto": "Cabo 10mm triplex",
+    "produto": "Cabo 10mm Triplex",
     "quantidade": 60,
     "local": "Base Santa Isabel",
     "responsavel": ""
@@ -78,7 +78,7 @@
   },
   {
     "id": 12,
-    "produto": "Cabo de cobre 70mm",
+    "produto": "Cabo De Cobre 70mm",
     "quantidade": 200,
     "local": "Base Santa Isabel",
     "responsavel": ""
@@ -92,28 +92,28 @@
   },
   {
     "id": 14,
-    "produto": "Kit montagem luminárias",
+    "produto": "Kit Montagem Luminárias",
     "quantidade": 153,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 15,
-    "produto": "Chumbador químico",
+    "produto": "Chumbador Químico",
     "quantidade": 348,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 16,
-    "produto": "Chumbador de ancoragem",
+    "produto": "Chumbador De Ancoragem",
     "quantidade": 420,
     "local": "Base Santa Isabel",
     "responsavel": ""
   },
   {
     "id": 17,
-    "produto": "Estojo de fixação",
+    "produto": "Estojo De Fixação",
     "quantidade": 480,
     "local": "Base Santa Isabel",
     "responsavel": ""
@@ -127,133 +127,133 @@
   },
   {
     "id": 19,
-    "produto": "cabo triplex 95mm",
+    "produto": "Cabo Triplex 95mm",
     "quantidade": 400,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 20,
-    "produto": "cabo triplex 70mm",
+    "produto": "Cabo Triplex 70mm",
     "quantidade": 200,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 21,
-    "produto": "cabo triplex 50mm",
+    "produto": "Cabo Triplex 50mm",
     "quantidade": 200,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 22,
-    "produto": "postes metálicos cl170",
+    "produto": "Postes Metálicos Cl170",
     "quantidade": 60,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 23,
-    "produto": "postes metálicos 7,5 ",
+    "produto": "Postes Metálicos 7,5m",
     "quantidade": 477,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 24,
-    "produto": "postes 18 ",
+    "produto": "Postes 18m",
     "quantidade": 31,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 25,
-    "produto": "postes oae lateral",
+    "produto": "Postes Oae Lateral",
     "quantidade": 126,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 26,
-    "produto": "braços duplo para poste de engastado",
+    "produto": "Braços Duplo para Poste de Engastado",
     "quantidade": 38,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 27,
-    "produto": "braços duplo para poste de 600dan",
+    "produto": "Braços Duplo para Poste de 600dan",
     "quantidade": 11,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 28,
-    "produto": "braços duplo para poste de 300 dan",
+    "produto": "Braços Duplo para Poste de 300 Dan",
     "quantidade": 23,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 29,
-    "produto": "braços unitário para poste 300 dan",
+    "produto": "Braços Unitário para Poste 300 Dan",
     "quantidade": 35,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 30,
-    "produto": "braços duplo para poste engastado",
+    "produto": "Braços Duplo para Poste Engastado",
     "quantidade": 49,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 31,
-    "produto": "braços de poste unitário para poste engastado",
+    "produto": "Braços de Poste Unitário para Poste Engastado",
     "quantidade": 2,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 32,
-    "produto": "poste de fibra",
+    "produto": "Poste de Fibra",
     "quantidade": 2,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 33,
-    "produto": "postes engastados",
+    "produto": "Postes Engastados",
     "quantidade": 297,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 34,
-    "produto": "chapas laterais",
+    "produto": "Chapas Laterais",
     "quantidade": 404,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 35,
-    "produto": "postes em barreira",
+    "produto": "Postes em Barreira",
     "quantidade": 58,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 36,
-    "produto": "braços simples",
+    "produto": "Braços Simples",
     "quantidade": 56,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
   },
   {
     "id": 37,
-    "produto": "braços duplos",
+    "produto": "Braços Duplos",
     "quantidade": 174,
     "local": "Base Pindamonhangaba",
     "responsavel": ""
@@ -267,63 +267,63 @@
   },
   {
     "id": 39,
-    "produto": "Led 136W",
+    "produto": "Led 136w",
     "quantidade": 78,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 40,
-    "produto": "Led 105W",
+    "produto": "Led 105w",
     "quantidade": 155,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 41,
-    "produto": "Led 52W",
+    "produto": "Led 52w",
     "quantidade": 40,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 42,
-    "produto": "Led 40W",
+    "produto": "Led 40w",
     "quantidade": 29,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 43,
-    "produto": "NOX (unidade)",
+    "produto": "NOX",
     "quantidade": 3390,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 44,
-    "produto": "Caixa de medição",
+    "produto": "Caixa De Medição",
     "quantidade": 17,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 45,
-    "produto": "Cabo 25mm quadriplex",
+    "produto": "Cabo 25mm Quadriplex",
     "quantidade": 1000,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 46,
-    "produto": "Cabo 16mm triplex",
+    "produto": "Cabo 16mm Triplex",
     "quantidade": 1800,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 47,
-    "produto": "Cabo 10mm triplex",
+    "produto": "Cabo 10mm Triplex",
     "quantidade": 60,
     "local": "Estoque Geral",
     "responsavel": ""
@@ -337,7 +337,7 @@
   },
   {
     "id": 49,
-    "produto": "Cabo de cobre 70mm",
+    "produto": "Cabo De Cobre 70mm",
     "quantidade": 200,
     "local": "Estoque Geral",
     "responsavel": ""
@@ -351,28 +351,28 @@
   },
   {
     "id": 51,
-    "produto": "Kit montagem luminárias",
+    "produto": "Kit Montagem Luminárias",
     "quantidade": 153,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 52,
-    "produto": "Chumbador químico",
+    "produto": "Chumbador Químico",
     "quantidade": 348,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 53,
-    "produto": "Chumbador de ancoragem",
+    "produto": "Chumbador De Ancoragem",
     "quantidade": 420,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 54,
-    "produto": "Estojo de fixação",
+    "produto": "Estojo De Fixação",
     "quantidade": 480,
     "local": "Estoque Geral",
     "responsavel": ""
@@ -386,133 +386,133 @@
   },
   {
     "id": 56,
-    "produto": "cabo triplex 95mm",
+    "produto": "Cabo Triplex 95mm",
     "quantidade": 400,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 57,
-    "produto": "cabo triplex 70mm",
+    "produto": "Cabo Triplex 70mm",
     "quantidade": 200,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 58,
-    "produto": "cabo triplex 50mm",
+    "produto": "Cabo Triplex 50mm",
     "quantidade": 200,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 59,
-    "produto": "postes metálicos cl170",
+    "produto": "Postes Metálicos Cl170",
     "quantidade": 60,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 60,
-    "produto": "postes metálicos 7,5 ",
+    "produto": "Postes Metálicos 7,5m",
     "quantidade": 477,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 61,
-    "produto": "postes 18 ",
+    "produto": "Postes 18m",
     "quantidade": 31,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 62,
-    "produto": "postes oae lateral",
+    "produto": "Postes Oae Lateral",
     "quantidade": 126,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 63,
-    "produto": "braços duplo para poste de engastado",
+    "produto": "Braços Duplo para Poste de Engastado",
     "quantidade": 38,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 64,
-    "produto": "braços duplo para poste de 600dan",
+    "produto": "Braços Duplo para Poste de 600dan",
     "quantidade": 11,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 65,
-    "produto": "braços duplo para poste de 300 dan",
+    "produto": "Braços Duplo para Poste de 300 Dan",
     "quantidade": 23,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 66,
-    "produto": "braços unitário para poste 300 dan",
+    "produto": "Braços Unitário para Poste 300 Dan",
     "quantidade": 35,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 67,
-    "produto": "braços duplo para poste engastado",
+    "produto": "Braços Duplo para Poste Engastado",
     "quantidade": 49,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 68,
-    "produto": "braços de poste unitário para poste engastado",
+    "produto": "Braços de Poste Unitário para Poste Engastado",
     "quantidade": 2,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 69,
-    "produto": "poste de fibra",
+    "produto": "Poste de Fibra",
     "quantidade": 2,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 70,
-    "produto": "postes engastados",
+    "produto": "Postes Engastados",
     "quantidade": 297,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 71,
-    "produto": "chapas laterais",
+    "produto": "Chapas Laterais",
     "quantidade": 404,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 72,
-    "produto": "postes em barreira",
+    "produto": "Postes em Barreira",
     "quantidade": 58,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 73,
-    "produto": "braços simples",
+    "produto": "Braços Simples",
     "quantidade": 56,
     "local": "Estoque Geral",
     "responsavel": ""
   },
   {
     "id": 74,
-    "produto": "braços duplos",
+    "produto": "Braços Duplos",
     "quantidade": 174,
     "local": "Estoque Geral",
     "responsavel": ""
