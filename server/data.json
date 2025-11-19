@@ -415,7 +415,7 @@
   {
     "id": 60,
     "produto": "Postes Metálicos 7,5m",
-    "quantidade": 477,
+    "quantidade": 546,
     "local": "Estoque Geral",
     "responsavel": ""
   },
@@ -514,6 +514,27 @@
     "id": 74,
     "produto": "Braços Duplos",
     "quantidade": 174,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 75,
+    "produto": "Postes Metálicos 12m",
+    "quantidade": 12,
+    "local": "PARATY / UBATUBA",
+    "responsavel": ""
+  },
+  {
+    "id": 76,
+    "produto": "Postes Metálicos 7,5m",
+    "quantidade": 69,
+    "local": "PARATY / UBATUBA",
+    "responsavel": ""
+  },
+  {
+    "id": 77,
+    "produto": "Postes Metálicos 12m",
+    "quantidade": 12,
     "local": "Estoque Geral",
     "responsavel": ""
   }
