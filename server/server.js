@@ -10,14 +10,10 @@ app.use(express.json());
 const initDatabaseIfNeeded = async () => {
   const client = await pool.connect();
   try {
-    // Try to select from stock
-    const result = await client.query('SELECT COUNT(*) as count FROM stock');
-    if (parseInt(result.rows[0].count) === 0) {
-      console.log('Stock table is empty, initializing...');
-      await initializeDatabase(client);
-    }
+    // Try to select from stock to check if table exists
+    await client.query('SELECT 1 FROM stock LIMIT 1');
   } catch (err) {
-    console.log('Stock table does not exist or error, initializing database...');
+    console.log('Stock table does not exist, initializing database...');
     await initializeDatabase(client);
   } finally {
     client.release();
@@ -30,10 +26,8 @@ const initializeDatabase = async (client) => {
   const dataPath = path.join(__dirname, 'data.json');
   const stockData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
   try {
-    await client.query('DROP TABLE IF EXISTS provisioning');
-    await client.query('DROP TABLE IF EXISTS stock');
     await client.query(`
-      CREATE TABLE stock (
+      CREATE TABLE IF NOT EXISTS stock (
         id SERIAL PRIMARY KEY,
         produto VARCHAR(255) NOT NULL,
         quantidade INTEGER NOT NULL,
@@ -42,7 +36,7 @@ const initializeDatabase = async (client) => {
       );
     `);
     await client.query(`
-      CREATE TABLE provisioning (
+      CREATE TABLE IF NOT EXISTS provisioning (
         id SERIAL PRIMARY KEY,
         produto VARCHAR(255) NOT NULL,
         quantidade INTEGER NOT NULL,
@@ -64,7 +58,7 @@ const initializeDatabase = async (client) => {
     `);
     for (const item of stockData) {
       await client.query(
-        'INSERT INTO stock (id, produto, quantidade, local, responsavel) VALUES ($1, $2, $3, $4, $5)',
+        'INSERT INTO stock (id, produto, quantidade, local, responsavel) VALUES ($1, $2, $3, $4, $5) ON CONFLICT (id) DO NOTHING',
         [item.id, item.produto, item.quantidade, item.local, item.responsavel]
       );
     }
