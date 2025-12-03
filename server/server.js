@@ -30,7 +30,6 @@ const initializeDatabase = async (client) => {
   const dataPath = path.join(__dirname, 'data.json');
   const stockData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
   try {
-    await client.query('DROP TABLE IF EXISTS logs');
     await client.query('DROP TABLE IF EXISTS provisioning');
     await client.query('DROP TABLE IF EXISTS stock');
     await client.query(`
@@ -53,7 +52,7 @@ const initializeDatabase = async (client) => {
       );
     `);
     await client.query(`
-      CREATE TABLE logs (
+      CREATE TABLE IF NOT EXISTS logs (
         id SERIAL PRIMARY KEY,
         produto VARCHAR(255) NOT NULL,
         quantidade_alterada INTEGER NOT NULL,
@@ -91,6 +90,7 @@ app.get('/api/stock', async (req, res) => {
 // Rota para atualizar os dados do estoque
 app.put('/api/stock', async (req, res) => {
   const newStock = req.body;
+  console.log('Received stock update request:', newStock);
   const client = await pool.connect();
 
   try {
@@ -102,24 +102,37 @@ app.put('/api/stock', async (req, res) => {
 
     for (const item of newStock) {
       const oldItem = currentStockMap.get(item.id);
+      console.log(`Processing item: ${item.produto} (ID: ${item.id})`);
       if (oldItem) {
+        console.log('Old item found in DB:', oldItem);
         const quantidadeDiff = item.quantidade - oldItem.quantidade;
+        console.log(`Quantidade diff: ${quantidadeDiff}`);
+        
         if (quantidadeDiff !== 0) {
           const tipo = quantidadeDiff > 0 ? 'adição' : 'retirada';
+          const logParams = [item.produto, Math.abs(quantidadeDiff), tipo, item.responsavel || oldItem.responsavel, item.local];
+          console.log('Inserting log with params:', logParams);
           await client.query(
             'INSERT INTO logs (produto, quantidade_alterada, tipo, responsavel, local) VALUES ($1, $2, $3, $4, $5)',
-            [item.produto, Math.abs(quantidadeDiff), tipo, item.responsavel || oldItem.responsavel, item.local]
+            logParams
           );
+          console.log('Log inserted successfully.');
+        } else {
+          console.log('No change in quantity, skipping log.');
         }
+      } else {
+        console.log('No old item found for this ID, skipping log.');
       }
 
       await client.query(
         'UPDATE stock SET quantidade = $1, responsavel = $2 WHERE id = $3',
         [item.quantidade, item.responsavel, item.id]
       );
+      console.log(`Stock updated for item ID: ${item.id}`);
     }
 
     await client.query('COMMIT'); // Commit transaction
+    console.log('Transaction committed successfully.');
     res.send('Stock updated successfully!');
   } catch (err) {
     await client.query('ROLLBACK'); // Rollback on error
