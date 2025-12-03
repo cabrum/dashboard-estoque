@@ -10,10 +10,14 @@ app.use(express.json());
 const initDatabaseIfNeeded = async () => {
   const client = await pool.connect();
   try {
-    // Try to select from stock to check if table exists
-    await client.query('SELECT 1 FROM stock LIMIT 1');
+    // Try to select from stock
+    const result = await client.query('SELECT COUNT(*) as count FROM stock');
+    if (parseInt(result.rows[0].count) === 0) {
+      console.log('Stock table is empty, initializing...');
+      await initializeDatabase(client);
+    }
   } catch (err) {
-    console.log('Stock table does not exist, initializing database...');
+    console.log('Stock table does not exist or error, initializing database...');
     await initializeDatabase(client);
   } finally {
     client.release();
