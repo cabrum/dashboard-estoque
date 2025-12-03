@@ -81,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
       let itemsForCurrentLocation;
 
       if (currentLocation === 'Estoque Geral') {
-        // Aggregate quantities by product across all locations
+        // Aggregate quantities by product across all locations except 'Estoque Geral'
         const aggregated = {};
-        stockData.forEach(item => {
+        stockData.filter(item => item.local !== 'Estoque Geral').forEach(item => {
           if (!aggregated[item.produto]) {
             aggregated[item.produto] = {
               produto: item.produto,
