@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <th>Status</th>
             <th>Responsável</th>
             <th>Ações</th>
+            ${currentLocation !== 'Estoque Geral' ? '<th>Adicionar/Retirar</th>' : ''}
           </tr>
         </thead>
         <tbody>
@@ -149,10 +150,16 @@ document.addEventListener('DOMContentLoaded', () => {
               </td>
               <td data-field="responsavel">${item.responsavel || ''}</td>
               <td>
-                ${currentLocation !== 'Estoque Geral' ? 
+                ${currentLocation !== 'Estoque Geral' ?
                   `<button class="edit-button">Editar</button>
                   <button class="save-button hidden">Salvar</button>` : ''}
               </td>
+              ${currentLocation !== 'Estoque Geral' ?
+                `<td>
+                  <input type="number" class="adjust-input" placeholder="Qtd" style="width: 60px;">
+                  <button class="add-button">+</button>
+                  <button class="subtract-button">-</button>
+                </td>` : ''}
             </tr>
           `;}).join('')}
         </tbody>
@@ -295,6 +302,25 @@ document.addEventListener('DOMContentLoaded', () => {
       item.responsavel = responsibleInput.value;
 
       updateStock().then(fetchStock);
+    }
+
+    if (target.classList.contains('add-button')) {
+      const adjustInput = row.querySelector('.adjust-input');
+      const amount = parseInt(adjustInput.value) || 0;
+      if (amount > 0) {
+        item.quantidade += amount;
+        updateStock().then(fetchStock);
+      }
+    }
+
+    if (target.classList.contains('subtract-button')) {
+      const adjustInput = row.querySelector('.adjust-input');
+      const amount = parseInt(adjustInput.value) || 0;
+      if (amount > 0) {
+        item.quantidade -= amount;
+        if (item.quantidade < 0) item.quantidade = 0;
+        updateStock().then(fetchStock);
+      }
     }
 
     if (event.target.classList.contains('remover-provisionado')) {
