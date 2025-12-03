@@ -81,7 +81,20 @@ document.addEventListener('DOMContentLoaded', () => {
       let itemsForCurrentLocation;
 
       if (currentLocation === 'Estoque Geral') {
-        itemsForCurrentLocation = stockData.filter(item => item.local === 'Estoque Geral');
+        // Aggregate quantities by product across all locations
+        const aggregated = {};
+        stockData.forEach(item => {
+          if (!aggregated[item.produto]) {
+            aggregated[item.produto] = {
+              produto: item.produto,
+              quantidade: 0,
+              responsavel: item.responsavel || '',
+              id: item.id // Use first item's id for reference
+            };
+          }
+          aggregated[item.produto].quantidade += item.quantidade;
+        });
+        itemsForCurrentLocation = Object.values(aggregated);
       } else if (currentLocation === 'Provisionado') {
         renderProvisionadosDashboard();
         return;
