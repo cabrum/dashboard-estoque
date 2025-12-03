@@ -6,6 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+const cors = require('cors');
+app.use(cors());
 
 const initDatabaseIfNeeded = async () => {
   const client = await pool.connect();
