@@ -84,7 +84,7 @@
     "responsavel": ""
   },
   {
-    "id": 000,
+    "id": 13,
     "produto": "Cabo 35mm Quadriplex",
     "quantidade": 10835,
     "local": "Base Santa Isabel",
@@ -543,6 +543,272 @@
     "produto": "Postes Metálicos 12m",
     "quantidade": 12,
     "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 78,
+    "produto": "Led 150w",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 79,
+    "produto": "Led 136w",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 80,
+    "produto": "Led 105w",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 81,
+    "produto": "Led 52w",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 82,
+    "produto": "Led 40w",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 83,
+    "produto": "NOX",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 84,
+    "produto": "Caixa De Medição",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 85,
+    "produto": "Cabo 25mm Quadriplex",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 86,
+    "produto": "Cabo 16mm Triplex",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 87,
+    "produto": "Cabo 10mm Triplex",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 88,
+    "produto": "Cabo PP 3x1,5mm",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 89,
+    "produto": "Cabo De Cobre 70mm",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 90,
+    "produto": "Cabo 35mm Quadriplex",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 91,
+    "produto": "Shorting Cap",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 92,
+    "produto": "Kit Montagem Luminárias",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 93,
+    "produto": "Chumbador Químico",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 94,
+    "produto": "Chumbador De Ancoragem",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 95,
+    "produto": "Estojo De Fixação",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 96,
+    "produto": "Porcas",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 97,
+    "produto": "Led 150w",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 98,
+    "produto": "Led 136w",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 99,
+    "produto": "Led 105w",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 100,
+    "produto": "Led 52w",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 101,
+    "produto": "Led 40w",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 102,
+    "produto": "NOX",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 103,
+    "produto": "Caixa De Medição",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 104,
+    "produto": "Cabo 25mm Quadriplex",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 105,
+    "produto": "Cabo 16mm Triplex",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 106,
+    "produto": "Cabo 10mm Triplex",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 107,
+    "produto": "Cabo PP 3x1,5mm",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 108,
+    "produto": "Cabo De Cobre 70mm",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 109,
+    "produto": "Cabo 35mm Quadriplex",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 110,
+    "produto": "Shorting Cap",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 111,
+    "produto": "Kit Montagem Luminárias",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 112,
+    "produto": "Chumbador Químico",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 113,
+    "produto": "Chumbador De Ancoragem",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 114,
+    "produto": "Estojo De Fixação",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
+  },
+  {
+    "id": 115,
+    "produto": "Porcas",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
     "responsavel": ""
   }
 ]
