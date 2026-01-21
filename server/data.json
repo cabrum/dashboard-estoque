@@ -810,5 +810,33 @@
     "quantidade": 0,
     "local": "Serra Das Araras",
     "responsavel": ""
+  },
+  {
+    "id": 116,
+    "produto": "Led 165w",
+    "quantidade": 0,
+    "local": "Base Santa Isabel",
+    "responsavel": ""
+  },
+  {
+    "id": 117,
+    "produto": "Led 165w",
+    "quantidade": 0,
+    "local": "Estoque Geral",
+    "responsavel": ""
+  },
+  {
+    "id": 118,
+    "produto": "Led 165w",
+    "quantidade": 0,
+    "local": "BASE ITAIAIA",
+    "responsavel": ""
+  },
+  {
+    "id": 119,
+    "produto": "Led 165w",
+    "quantidade": 0,
+    "local": "Serra Das Araras",
+    "responsavel": ""
   }
 ]
