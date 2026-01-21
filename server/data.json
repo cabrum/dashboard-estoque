@@ -84,6 +84,13 @@
     "responsavel": ""
   },
   {
+    "id": 000,
+    "produto": "Cabo 35mm Quadriplex",
+    "quantidade": 10835,
+    "local": "Base Santa Isabel",
+    "responsavel": ""
+  },
+  {
     "id": 13,
     "produto": "Shorting Cap",
     "quantidade": 100,
